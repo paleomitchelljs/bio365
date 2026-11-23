@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIO 365 lectures</title>
+<meta name="description" content="Five lecture decks for BIO 365 comparative vertebrate anatomy: salamanders, turtles and crocodylians and tuatara, squamates, birds, mammals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  :root { --board: #f9fbfa; --card: #ffffff; --ink: #17211d; --muted: #62706a; --rule: #cfd8d3; --accent-ink: #8a6100; color-scheme: light; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --board: #1b2823; --card: #24352e; --ink: #edece3; --muted: #919d97; --rule: #34463e; --accent-ink: #f5d76e; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --board: #1b2823; --card: #24352e; --ink: #edece3; --muted: #919d97; --rule: #34463e; --accent-ink: #f5d76e; color-scheme: dark; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body { min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; background: var(--board); color: var(--ink); font: 18px/1.4 "Source Sans 3", "Segoe UI", system-ui, sans-serif; }
+  main { width: 100%; max-width: 1100px; }
+  h1 { margin: 0 0 28px; font-weight: 600; font-size: 22px; letter-spacing: 0.08em; color: var(--muted); text-align: center; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .tile { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 26px 22px 24px; color: var(--ink); text-decoration: none; background: var(--card); border: 2px solid var(--rule); border-radius: 20px; transition: border-color 0.2s, transform 0.2s; }
+  .tile:hover { border-color: var(--accent-ink); transform: translateY(-2px); }
+  .tile:focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 3px; }
+  .pic { height: 150px; width: 100%; display: grid; place-items: center; border-radius: 12px; background: #fff; }
+  .pic img { max-height: 135px; max-width: 92%; object-fit: contain; }
+  .n { font-weight: 600; font-size: 15px; letter-spacing: 0.08em; color: var(--muted); }
+  .name { font-weight: 700; font-size: 30px; line-height: 1.15; text-align: center; }
+  .keys { margin: 30px 0 0; font-size: 15px; color: var(--muted); text-align: center; }
+  @media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>BIO 365</h1>
+  <nav class="tiles" aria-label="Lectures">
+    <a class="tile" href="caudata/"><span class="pic"><img src="caudata/img/3D_MS_Cryptobranchus-skeleton-UF88726_view1_side.jpg" alt=""></span><span class="n">1</span><span class="name">Caudata</span></a>
+    <a class="tile" href="reptiles/"><span class="pic"><img src="reptiles/img/3D_MS_Sphenodon-skull-UF11978_view1_side.jpg" alt=""></span><span class="n">2</span><span class="name">Turtles, crocodylians, tuatara</span></a>
+    <a class="tile" href="squamata/"><span class="pic"><img src="squamata/img/3D_MS_Gekko-smithii-CAS9595_view1_side.jpg" alt=""></span><span class="n">3</span><span class="name">Squamata</span></a>
+    <a class="tile" href="aves/"><span class="pic"><img src="aves/img/3D_MS_Struthio-ostrich-skull-OUVC10636_view1_side.jpg" alt=""></span><span class="n">4</span><span class="name">Aves</span></a>
+    <a class="tile" href="mammalia/"><span class="pic"><img src="mammalia/img/3D_Didelphis-opossum-skull_view1_side.jpg" alt=""></span><span class="n">5</span><span class="name">Mammalia</span></a>
+  </nav>
+  <p class="keys">In a deck: → next · ← back · L level · S speaker notes · T theme · B blank</p>
+</main>
+</body>
+</html>

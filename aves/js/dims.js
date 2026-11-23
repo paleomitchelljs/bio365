@@ -1,0 +1,23 @@
+/* Written by tools/assets.py: [width, height] of each picture in img/. */
+window.DIMS = {
+  "3D_Anas-mallard-skull-joints_sketchfab-preview.jpg": [1024, 576],
+  "3D_Archilochus-ruby-throated-hummingbird_sketchfab-preview.jpg": [1024, 576],
+  "3D_Dinornis-giant-moa_sketchfab-preview.jpg": [1024, 576],
+  "3D_MS_Struthio-ostrich-skull-OUVC10636_view1_side.jpg": [521, 255],
+  "3D_Tinamus-great-tinamou_sketchfab-preview.jpg": [1024, 576],
+  "Chang2009_Fig1_reptile-scale-types.jpg": [1423, 1115],
+  "Chin2017_Fig1_bird-bat-flight-phylogeny.jpg": [1084, 681],
+  "Chin2017_Fig2_wing-bone-loading.jpg": [1231, 1007],
+  "Chin2017_Fig3_wing-muscles-EMG.jpg": [1588, 1685],
+  "D08_bird_air_sacs.gif": [760, 402],
+  "F4_bird_wing_coupling.gif": [680, 469],
+  "H3_bird_ankle.gif": [680, 203],
+  "Huynen2014_Fig1_moa-wing-and-tbx5-network.jpg": [621, 816],
+  "Huynen2014_Fig4_moa-tbx5-chick-hindlimb.jpg": [970, 1629],
+  "J6_ostrich_cranial_kinesis.gif": [680, 321],
+  "Johnston2014_Fig2_chicken-hyoid.jpg": [1142, 541],
+  "Johnston2014_Fig3_swan-hyoid-horns.jpg": [521, 288],
+  "Johnston2014_Fig4_kestrel-tongue.jpg": [1169, 563],
+  "Suzuki2014_Fig1_tinamou-scapula-coracoid.jpg": [1420, 1069],
+  "Suzuki2014_Fig4_tinamou-sternum-keel.jpg": [1416, 860]
+};
