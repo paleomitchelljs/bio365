@@ -5,7 +5,7 @@ usage: python3 tools/assets.py [--src PATH] [--prune] [deck ...]
 
   --src    the outlines folder (default: ../comparative/lectures/outlines)
   --prune  delete files in <deck>/img that content.js no longer names
-  deck     caudata reptiles squamata aves mammalia (default: all)
+  deck     caudata diapsida squamata aves mammalia (default: all)
 
 content.js names a picture by its file name in img/: a figure or 3D render
 `images/L*/<stem>.png|jpg` becomes `<stem>.jpg` (JPEG, at most 1800 px on a side),
@@ -17,8 +17,8 @@ import glob, json, os, re, struct, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-DECKS = ['caudata', 'reptiles', 'squamata', 'aves', 'mammalia']
-REF = re.compile(r"""['"](?:img/)?([A-Za-z0-9][A-Za-z0-9_.\-]*\.(?:jpg|gif))['"]""")
+DECKS = ['caudata', 'diapsida', 'squamata', 'aves', 'mammalia']
+REF = re.compile(r"""['"](?:img/)?([A-Za-z0-9][A-Za-z0-9_.\-]*\.(?:jpg|gif|svg))['"]""")
 
 
 def sh(*a):
@@ -26,6 +26,9 @@ def sh(*a):
 
 
 def dims(path):
+    if path.endswith('.svg'):  # drawn by a tools/draw_*.py script: its width and height attributes
+        head = open(path, encoding='utf-8').read(400)
+        return [int(float(re.search(r'width="([\d.]+)"', head).group(1))), int(float(re.search(r'height="([\d.]+)"', head).group(1)))]
     with open(path, 'rb') as f:
         head = f.read(10)
     if head[:3] == b'GIF':

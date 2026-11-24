@@ -7,7 +7,7 @@
 'use strict';
 const fs = require('fs'), path = require('path'), vm = require('vm');
 const ROOT = path.join(__dirname, '..');
-const DECKS = ['caudata', 'reptiles', 'squamata', 'aves', 'mammalia'];
+const DECKS = ['caudata', 'diapsida', 'squamata', 'aves', 'mammalia'];
 let checks = 0, fails = 0;
 const check = (name, ok, detail) => { checks++; if (!ok) { fails++; console.log(`FAIL  ${name}${detail ? '  ' + detail : ''}`); } };
 

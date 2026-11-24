@@ -13,7 +13,6 @@ window.DIMS = {
   "Cook2017_Fig10_foramen-of-Panizza.jpg": [647, 653],
   "Cook2017_Fig13_three-arterial-trunks.jpg": [1331, 686],
   "Cook2017_Fig15_outflow-cartilages.jpg": [1332, 1372],
-  "D01_turtle_breathing.gif": [760, 286],
   "D02_turtle_neck_retraction.gif": [760, 184],
   "D03_matamata_suction.gif": [760, 228],
   "D04_croc_hepatic_piston.gif": [760, 231],
@@ -35,5 +34,9 @@ window.DIMS = {
   "WerneburgPreuschoft2024_Fig14_force-inputs-summary.jpg": [1406, 1800],
   "WerneburgPreuschoft2024_Fig1_Sphenodon-Chelydra-temporal-terms.jpg": [898, 1631],
   "WerneburgPreuschoft2024_Fig5_anterior-vs-posterior-bite-arcades.jpg": [1175, 1522],
-  "Zhu2011_Fig1_Chelydra-vs-Trachemys-plastron.jpg": [1284, 563]
+  "Zhu2011_Fig1_Chelydra-vs-Trachemys-plastron.jpg": [1284, 563],
+  "turtle-breathing-in.svg": [1240, 640],
+  "turtle-breathing-out.svg": [1240, 640],
+  "turtle-breathing-pulm.svg": [1240, 640],
+  "turtle-breathing-rest.svg": [1240, 640]
 };

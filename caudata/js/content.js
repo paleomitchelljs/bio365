@@ -2,7 +2,7 @@
  * On screen: clade names, anatomy, a few numbers. Everything else is in notes (S). */
 (function () {
   'use strict';
-  const K = window.Kit, I = K.img;
+  const K = window.Kit, I = K.img, SF = K.sf;
   const MS = (spec, id) => `${spec} · oVert · MorphoSource ${id}`;
   const SHORTEN = '*red* = shortening';
 
@@ -13,14 +13,19 @@ Caudata
     Hynobiidae | Asian salamanders
   Diadectosalamandroidei
     Sirenidae | sirens
-    ~Salamandroidea
-      Proteidae | mudpuppy, olm
-      Rhyacotritonidae | torrent salamanders
-      Amphiumidae | amphiumas
-      Plethodontidae | lungless salamanders
-      Ambystomatidae | mole salamanders, axolotl
-      Dicamptodontidae | Pacific giant salamanders
-      Salamandridae | newts`;
+    Salamandroidea
+      .
+        Salamandridae | newts
+        .
+          Ambystomatidae | mole salamanders, axolotl
+          Dicamptodontidae | Pacific giant salamanders
+      .
+        Proteidae | mudpuppy, olm
+        .
+          Rhyacotritonidae | torrent salamanders
+          .
+            Amphiumidae | amphiumas
+            Plethodontidae | lungless salamanders`;
   const at = (hi) => ({ src: CAUDATA, hi });
 
   const PRACTICE = `
@@ -40,27 +45,32 @@ Gnathostomata
           hellbender
           .
             siren
-            ~Salamandroidea
-              mudpuppy
-              red-backed salamander
-              newt`;
+            Salamandroidea
+              newt
+              .
+                mudpuppy
+                red-backed salamander`;
 
   const segments = [
     K.cover('Caudata', {
       sub: 'Urodela · salamanders',
-      pic: 'img/3D_MS_Cryptobranchus-skeleton-UF88726_view1_side.jpg', cap: '_Cryptobranchus_ · ' + MS('UF Herp 88726', '000036424'),
+      pic: 'img/ph_Cryptobranchus.jpg', cap: '_Cryptobranchus alleganiensis_, the hellbender',
       notes: ['Salamanders were promised as the treat for after Thanksgiving (lec24).', 'Caudata (_cauda_, tail) = Urodela (_oura_ + _dēlos_, visible tail). Interchangeable.']
     }),
 
     K.plate('hook', '_Homo diluvii testis_', {
       min: 2.5,
       head: { name: '_Homo diluvii testis_', facts: 'Scheuchzer 1726' },
-      panels: [I('3D_MS_Cryptobranchus-skeleton-UF88726_view1_side.jpg', '_Cryptobranchus_, a living cryptobranchid · ' + MS('UF Herp 88726', '000036424'))],
+      panels: [
+        SF('2b84320f2a2b4493a9a2a8f8ffe5626b', 'The holotype, Teylers Museum · "Andrias scheuchzeri Holotype" by Olof Moleman · Sketchfab', { aspect: 16 / 10 }),
+        I('ph_Andrias-held.jpg', 'Chinese giant salamander', { label: '_Andrias_ today', at: 2 })
+      ],
       foot: [{ text: '"a man drowned in the Flood"', at: 0 }, { text: 'Cuvier, c. 1811', at: 1 }, { text: '_Andrias scheuchzeri_', at: 2 }],
       notes: [
-        '1726: Scheuchzer describes a skeleton from Öhningen as a man drowned in Noah\'s flood.',
+        '1726: Scheuchzer describes a skeleton from Öhningen as a man drowned in Noah\'s flood. The 3D model is that slab: turn it and find the skull, the spine, the forelimbs.',
         'Cuvier (c. 1811) shows it is a giant salamander. Comparative anatomy beat the story in ~85 years.',
-        'Same genus alive today in China and Japan. The fossil is Miocene European: the family once spanned Laurasia (comes back with the disjunct distribution).'
+        'Same genus alive today in China and Japan. The fossil is Miocene European: the family once spanned Laurasia (comes back with the disjunct distribution).',
+        '⚑ Photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -78,7 +88,10 @@ Gnathostomata
     K.plate('bodyplan', 'Trunk muscles', {
       min: 2.5,
       head: { name: 'Epaxials and hypaxials', facts: 'three lissamphibians' },
-      panels: [I('OReilly2000_Fig1_epaxial-muscles-3-lissamphibians.jpg', "O'Reilly, Summers & Ritter 2000")],
+      panels: [
+        I('OReilly2000_Fig1_epaxial-muscles-3-lissamphibians.jpg', "O'Reilly, Summers & Ritter 2000"),
+        SF('1484d32a04374e3d9cd718c0625d622f', '"Muscles of an adult Ambystoma mexicanum" · GigaScience · Sketchfab · CC BY', { label: 'axolotl, segmented', at: 1 })
+      ],
       foot: [
         { text: 'dorsalis trunci · interspinalis · intertransversarii' },
         { text: 'subvertebralis · external oblique · internal oblique · transversus', at: 1 },
@@ -87,6 +100,7 @@ Gnathostomata
       notes: [
         'Body plan = the generalized tetrapod run in reverse: sprawling limbs, lateral undulation, cold wet habitats, skin as a respiratory organ.',
         'Epaxials on dorsal rami; hypaxials on ventral rami. External oblique often two layers.',
+        'The 3D axolotl is segmented muscle by muscle from microCT: turn it to see the myomeres above and below the horizontal septum.',
         'New land job for the hypaxials: resisting long-axis *torsion* of the trunk.'
       ]
     }),
@@ -111,7 +125,8 @@ Gnathostomata
       steps: [{}, { hi: ['Cryptobranchoidea'] }, { hi: ['Salamandroidea'] }],
       marks: [{ on: 'Cryptobranchoidea', text: 'external fertilization', at: 1 }, { on: 'Salamandroidea', text: 'spermatophore', at: 2 }],
       notes: [
-        'Know which families sit in Salamandroidea, not the order inside it.',
+        'Know which families sit in Salamandroidea; the order inside it is shown but not tested.',
+        'Topology: Hime et al. 2021 (Syst. Biol. 70:49), 220 nuclear loci: Cryptobranchoidea first, then sirens sister to Salamandroidea. Inside Salamandroidea, newts + (mole + Pacific giant salamanders) vs. proteids + (torrent salamanders + (amphiumas + plethodontids)). Same as Pyron & Wiens 2011.',
         '⚠ Past lectures said all Caudata fertilize internally, and described hynobiids passing spermatophores. Only *Salamandroidea* use spermatophores. Cryptobranchoids fertilize externally (hellbender males guard a nest cavity).',
         'Siren fertilization is poorly known; no spermatophore found. Hedge.',
         'Amphibian table: caecilians internal with a phallodeum; most salamanders internal, no intromittent organ; cryptobranchoids external; frogs external except _Ascaphus_.'
@@ -123,36 +138,51 @@ Gnathostomata
     K.plate('crypto', 'Cryptobranchidae', {
       min: 2.5, mini: at('Cryptobranchidae'),
       head: { name: 'Cryptobranchidae', facts: '_Andrias_ · _Cryptobranchus_' },
-      panels: [I('3D_MS_Cryptobranchus-skeleton-UF88726_view1_side.jpg', '_Cryptobranchus alleganiensis_ · ' + MS('UF Herp 88726', '000036424'))],
-      foot: [{ text: 'skin folds' }, { text: '1 pair of gill slits' }, { text: 'E Asia + E North America', at: 1 }],
+      panels: [
+        I('ph_Cryptobranchus.jpg', '_Cryptobranchus alleganiensis_', { label: 'hellbender: skin folds' }),
+        SF('879fc03673e84b00a788290ca835ae4e', '_Andrias japonicus_ FMNH 31356 · Blackburn Lab · Sketchfab', { label: '_Andrias_ skeleton', at: 1, aspect: 16 / 10 })
+      ],
+      foot: [{ text: '1 pair of gill slits' }, { text: 'E Asia + E North America', at: 1 }],
       notes: [
         '_kryptos_ hidden + _branchia_ gill. _Andrias_ to ~1.8 m; now split into several species (_A. sligoi_ 2019); wild populations mostly farm-mixed.',
         'Hellbender ("snot otter"), ~70 cm, fast cold streams of Appalachia and the Ozarks. Breathes mostly through its baggy lateral skin.',
         'Adults lose the gills but keep one pair of gill slits (Iordansky 2001).',
-        'Disjunct: eastern Asia and eastern North America, nothing between. Paddlefish and _Alligator_ show the same pattern: a once-Laurasian group, relict at both ends.'
+        'Disjunct: eastern Asia and eastern North America, nothing between. Paddlefish and _Alligator_ show the same pattern: a once-Laurasian group, relict at both ends.',
+        '⚑ Hellbender photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
     K.plate('hyno', 'Hynobiidae', {
       min: 1.5, mini: at('Hynobiidae'),
       head: { name: 'Hynobiidae', facts: 'Asia' },
-      panels: [],
-      foot: [{ text: 'external fertilization' }, { text: 'lungs (most)' }, { text: '_Onychodactylus_: lungless', at: 1 }, { text: '_Salamandrella_: freezes', at: 2 }],
+      panels: [
+        SF('31cd72d784ae4190b1b05f2cf0a72613', '_Hynobius nebulosus_, live scan · ffish.asia / floraZia · Sketchfab · CC0', { label: '_Hynobius_', aspect: 16 / 10 }),
+        I('ph_Onychodactylus.jpg', 'Tetrapod Zoology (Sci. Am. blogs) 2013', { label: '_Onychodactylus_: lungless', at: 1 }),
+        I('ph_Salamandrella-ice.gif', '_Salamandrella keyserlingii_', { label: '_Salamandrella_: freezes', at: 2 })
+      ],
+      foot: [{ text: 'external fertilization' }, { text: 'lungs (most)' }],
       notes: [
+        '~90 species, Asia. The 3D model is a photogrammetry scan of a live clouded salamander.',
         '⚠ The 440 notes call Hynobiidae lungless. Most have lungs. Only _Onychodactylus_ is lungless, independently of plethodontids (Lewis & Hanken 2017).',
-        '_Salamandrella keyserlingii_ survives freezing, reportedly to −35 °C and below.'
+        '_Salamandrella keyserlingii_ survives freezing, reportedly to −35 °C and below.',
+        '⚑ _Salamandrella_ clip from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
     K.plate('siren', 'Sirenidae', {
       min: 2, mini: at('Sirenidae'),
       head: { name: 'Sirenidae', facts: '_Siren_ · _Pseudobranchus_' },
-      panels: [I('3D_MS_Siren-intermedia-UF123993_view1_side.jpg', '_Siren intermedia_ · ' + MS('UF Herp 123993', '000011936'))],
-      foot: [{ text: 'no hind limbs, no pelvis' }, { text: 'horny beak' }, { text: '3 pairs of gill slits' }, { text: 'no prefrontal', at: 1 }],
+      panels: [
+        I('ph_Siren.jpg', '_Siren_', { label: 'external gills, forelimbs only' }),
+        SF('f258d5a50e8d448ab1ccb6830ae28cf0', '"Lesser Siren Skeleton" · Blackburn Lab · Sketchfab', { label: 'no hind limbs, no pelvis', aspect: 16 / 10 })
+      ],
+      foot: [{ text: 'horny beak' }, { text: '3 pairs of gill slits' }, { text: 'no prefrontal', at: 1 }],
       notes: [
         'SE US, permanently gilled. Keratinous beak on a toothless premaxilla (Iordansky 2001).',
+        'Turn the skeleton: shoulder girdle and tiny forelimbs, then nothing behind but vertebrae.',
         'Sirens and proteids lack prefrontals, bones that normally ossify at metamorphosis.',
-        'Aestivate in a mucus cocoon when ponds dry.'
+        'Aestivate in a mucus cocoon when ponds dry.',
+        '⚑ Photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -160,14 +190,17 @@ Gnathostomata
       min: 2, mini: at('Proteidae'),
       head: { name: 'Proteidae', facts: '_Necturus_ · _Proteus_' },
       panels: [
-        I('3D_Necturus-skull-labeled_sketchfab-preview.jpg', '"Necturus Skull (Labeled)" by jdb56 · Sketchfab · CC BY 4.0'),
-        I('Bauer1997_Fig3_Necturus-depressors.jpg', 'Bauer 1997', { label: 'ceratomandibularis', at: 1 })
+        I('ph_Necturus.jpg', '_Necturus maculosus_', { label: 'mudpuppy' }),
+        I('ph_Proteus.jpg', '_Proteus anguinus_', { label: 'olm' }),
+        SF('c04e618ff93b4af18b0113f159503ed7', '"Necturus Skull (Labeled)" by jdb56 · Sketchfab · CC BY', { at: 1, aspect: 1 }),
+        I('Bauer1997_Fig3_Necturus-depressors.jpg', 'Bauer 1997', { label: 'ceratomandibularis', at: 2 })
       ],
       foot: [{ text: '2 pairs of gill slits' }, { text: '3 ceratobranchials' }],
       notes: [
         'Opisthotic stays separate from the exoccipital: a larval condition (Iordansky 2001).',
         '_Necturus_ has a uniquely complex ceratomandibularis: the proteid autapomorphy (Bauer 1997).',
-        'Olm: depigmented cave form, eyes under the skin, predicted lifespan >100 years (Voituron et al. 2011).'
+        'Olm: depigmented cave form, eyes under the skin, predicted lifespan >100 years (Voituron et al. 2011).',
+        '⚑ Photos from the 2022 slides (web image search); sources not recorded.'
       ]
     }),
 
@@ -175,52 +208,67 @@ Gnathostomata
       min: 2, mini: at('Amphiumidae'),
       head: { name: 'Amphiumidae', facts: '_Amphiuma_' },
       panels: [
-        I('3D_MS_Amphiuma-means-skull-UF2760_view1_side.jpg', '_Amphiuma means_ · ' + MS('UF Herp 2760', '000036806')),
-        I('Iordansky2001_Fig1_Amphiuma-skull.jpg', 'Iordansky 2001')
+        I('ph_Amphiuma-eggs.jpg', '_Amphiuma means_ with its eggs', { label: '_A. means_: 2 toes' }),
+        SF('95e31f7b5cc14c8fbcc71cecd6e18ac8', '"Two-Toed Amphiuma, Amphiumidae" · Florida Museum · Sketchfab', { aspect: 16 / 10 }),
+        I('Iordansky2001_Fig1_Amphiuma-skull.jpg', 'Iordansky 2001', { label: 'temporal crest', at: 1 })
       ],
-      foot: [{ text: '1 · 2 · 3 toes' }, { text: 'temporal crest' }, { text: 'ceratomandibularis kept', at: 1 }],
+      foot: [{ text: '1 · 2 · 3 toes' }, { text: 'ceratomandibularis kept', at: 2 }],
       notes: [
-        'Three species, told apart by toe count. One pair of gill slits.',
+        'Three species, told apart by toe count. One pair of gill slits. Females coil around their eggs.',
         'Adult-type skull: firm temporal crest, pinnate adductors working over a parietal "pulley" (Iordansky 2001).',
-        'Keep the larval ceratomandibularis into adulthood (Bauer 1997).'
+        'Keep the larval ceratomandibularis into adulthood (Bauer 1997).',
+        '⚑ Photo from the 2022 slides ("Amphiuma means with egg clutch, May 2010"); photographer not recorded.'
       ]
     }),
 
     K.plate('rhyaco', 'Rhyacotritonidae', {
       tier: 2, min: 0.5, mini: at('Rhyacotritonidae'),
       head: { name: 'Rhyacotritonidae', facts: 'Pacific Northwest' },
-      panels: [], foot: [{ text: '4 species' }, { text: 'no paedomorphs' }],
-      notes: ['Four species, Pacific Northwest, no paedomorphic members.']
+      panels: [I('ph_Rhyacotriton.jpg', '_Rhyacotriton_'), I('ph_Rhyacotriton-b.jpg', '_Rhyacotriton_ · Todd Pierson')],
+      foot: [{ text: '4 species' }, { text: 'no paedomorphs' }],
+      notes: ['Four species, Pacific Northwest, no paedomorphic members. Cold seeps and splash zones.', '⚑ Left photo from the 2022 slides; source not recorded.']
     }),
 
     K.plate('ambystoma', 'Ambystomatidae', {
       min: 2, mini: at('Ambystomatidae'),
       head: { name: 'Ambystomatidae', facts: 'mole salamanders · axolotl' },
-      panels: [],
+      panels: [
+        I('ph_Ambystoma-tigrinum.jpg', '_A. tigrinum_', { label: 'tiger' }),
+        I('ph_Ambystoma-opacum.jpg', '_A. opacum_', { label: 'marbled' }),
+        I('ph_axolotl.jpg', '_A. mexicanum_', { label: 'axolotl' }),
+        I('ph_Ambystoma-laterale.jpg', '_A. laterale_', { label: 'blue-spotted', at: 1 })
+      ],
       foot: [{ text: 'vernal pools' }, { text: 'unisexual _Ambystoma_', at: 1 }, { text: 'kleptogenesis', at: 1 }],
       notes: [
-        'Unisexual _Ambystoma_: all-female polyploids that "steal" sperm. Lineage ~5 Myr old (Bogart et al.).',
-        '⚠ Drop the 440 "natural de-extinction" framing; present it as genome-stealing.'
+        'Unisexual _Ambystoma_: all-female polyploids that "steal" sperm, mostly from blue-spotted and Jefferson salamanders. Lineage ~5 Myr old (Bogart et al.).',
+        '⚠ Drop the 440 "natural de-extinction" framing; present it as genome-stealing.',
+        '⚑ Photos from the 2022 slides (web image search); sources not recorded.'
       ]
     }),
 
     K.plate('dicampto', 'Dicamptodontidae', {
       tier: 2, min: 0.5, mini: at('Dicamptodontidae'),
       head: { name: 'Dicamptodontidae', facts: 'Pacific giant salamanders' },
-      panels: [], foot: [{ text: 'facultative paedomorphs' }],
-      notes: ['Some species are facultatively paedomorphic.']
+      panels: [I('ph_Dicamptodon.jpg', '_Dicamptodon_ · Gary Nafis'), I('ph_Dicamptodon-stream.jpg', '_Dicamptodon_ larva · Todd Pierson')],
+      foot: [{ text: 'facultative paedomorphs' }],
+      notes: ['Some species are facultatively paedomorphic. Adults to ~35 cm; they bark.']
     }),
 
     K.plate('pletho', 'Plethodontidae', {
       min: 3, mini: at('Plethodontidae'),
       head: { name: 'Plethodontidae', facts: 'lungless salamanders' },
-      panels: [I('3D_MS_Plethodon-glutinosus-skull-UF3183_view1_side.jpg', '_Plethodon glutinosus_ · ' + MS('UF Herp 3183', '000116731'))],
-      foot: [{ text: 'no lungs' }, { text: 'nasolabial grooves' }, { text: 'cirri', at: 1 }, { text: 'mental gland', at: 1 }, { text: 'direct development', at: 2 }],
+      panels: [
+        I('ph_Plethodon-yonahlossee.jpg', '_Plethodon yonahlossee_', { label: 'no lungs' }),
+        I('ph_Eurycea-cirri.jpg', '_Eurycea_, males', { label: 'nasolabial groove · cirri', at: 1 }),
+        I('ph_Plethodon-courtship.jpg', '_Plethodon_ courtship', { label: 'mental gland', at: 1 }),
+        I('ph_Plethodon-eggs.jpg', '_Plethodon_ · davehuth.com', { label: 'direct development', at: 2 })
+      ],
       notes: [
-        'Most species-rich family. Most are direct developers.',
+        'Most species-rich family. Most are direct developers: no larva, the female guards eggs on land.',
         'Nasolabial groove: slit from lip to nostril that wicks chemicals to the vomeronasal organ. A real family synapomorphy.',
         '⚠ The 440 notes say cirri "contain vomeronasal organs". Cirri are fleshy downward extensions of the groove in males of some genera (_Eurycea_); they carry chemicals up to the VNO, they do not house it.',
-        'Courtship: tail-straddling walk; male slaps or scratches pheromone from the mental (chin) gland onto the female.'
+        'Courtship: tail-straddling walk; male slaps or scratches pheromone from the mental (chin) gland onto the female (inset in the photo).',
+        '⚑ Photos from the 2022 slides (web image search); sources not recorded except the egg photo.'
       ]
     }),
 
@@ -228,14 +276,18 @@ Gnathostomata
       min: 2.5, mini: at('Salamandridae'),
       head: { name: 'Salamandridae', facts: 'newts · true salamanders' },
       panels: [
-        I('3D_MS_Notophthalmus-skull-UF84517_view1_side.jpg', '_Notophthalmus viridescens_ · ' + MS('UF Herp 84517', '000036241')),
-        I('Wu2012_Fig5_Pachytriton-skull-frontosquamosal-arch.jpg', 'Wu, Wang & Hanken 2012', { label: 'frontosquamosal arch', at: 1 })
+        I('ph_eft.jpg', 'Red eft · Judy Gallagher · CC BY 2.0', { label: 'keratinized skin' }),
+        I('ph_Notophthalmus.jpg', '_Notophthalmus viridescens_', { label: 'aquatic adult' }),
+        I('Wu2012_Fig5_Pachytriton-skull-frontosquamosal-arch.jpg', 'Wu, Wang & Hanken 2012', { label: 'frontosquamosal arch', at: 1 }),
+        I('ph_newt-larva.jpg', 'eastern newt larva', { label: 'larva', at: 2 })
       ],
-      foot: [{ text: 'keratinized skin' }, { text: 'larva → eft → adult', at: 2 }],
+      foot: [{ text: 'larva → eft → adult', at: 2 }],
       notes: [
+        'Rough, dry, keratinized skin: the eft can wander far from water for years. Compare the slick plethodontid skin.',
         'Frontosquamosal arch: a bony bridge over the orbit, thought to protect the retracted eye (Wu, Wang & Hanken 2012).',
         '⚠ The 440 notes call it a convergent "temporal fenestra". Call it the frontosquamosal arch. Newts still lack a jugal.',
-        'Three-stage life cycle: larva → terrestrial eft → aquatic adult.'
+        'Three-stage life cycle: larva → terrestrial eft → aquatic adult.',
+        '⚑ Adult and larva photos from the 2022 slides (web image search); sources not recorded.'
       ]
     }),
 
@@ -266,11 +318,15 @@ Gnathostomata
 
     K.plate('idskull', 'Salamander skull', {
       min: 2.5,
-      head: { name: 'Salamander skull', facts: '_Plethodon_' },
-      panels: [I('3D_MS_Plethodon-glutinosus-skull-UF3183_view1_side.jpg', '_Plethodon glutinosus_ · ' + MS('UF Herp 3183', '000116731'))],
+      head: { name: 'Salamander skull', facts: '_Ambystoma_ · _Dicamptodon_' },
+      panels: [
+        SF('d1f2a430dd8c45ce8708d3debcbe0ba8', '"Spotted Salamander Skull Anatomy" · Blackburn Lab · Sketchfab', { label: 'bones coloured', aspect: 16 / 10 }),
+        I('CT_Dicamptodon-skull.jpg', '_Dicamptodon ensatus_ · DigiMorph', { at: 1 })
+      ],
       foot: [{ text: 'no jugal' }, { text: 'open cheek' }, { text: '2 occipital condyles', at: 1 }, { text: 'pedicellate teeth', at: 2 }, { text: 'vomerine teeth', at: 2 }, { text: 'big hyobranchials', at: 3 }],
       notes: [
         '2018 exam 4 Q19 asked caudate vs. squamate from photographs, all-or-nothing.',
+        'Turn the spotted salamander skull to the side: no bar under the orbit, the cheek opens straight into it.',
         'Two occipital condyles: lissamphibians and mammals.',
         'Pedicellate teeth on upper *and* lower jaws (unlike most frogs).',
         'Huge hyobranchials in gilled forms.'
@@ -306,14 +362,16 @@ Gnathostomata
     }),
 
     K.plate('desmog', '_Desmognathus_', {
-      min: 4,
+      min: 3.5,
       head: { name: '_Desmognathus_', facts: 'Deban & Richardson 2017' },
       panels: [
-        I('Deban2017_Fig1_desmognathus-QP-muscle.jpg', 'Deban & Richardson 2017', { label: 'quadratopectoralis · VII' }),
-        I('Deban2017_Fig4_head-flexion-AM-ligament.jpg', 'Deban & Richardson 2017', { label: 'atlanto-mandibular ligament', at: 1 })
+        I('ph_Desmognathus.jpg', '_Desmognathus_ · Todd Pierson'),
+        I('Deban2017_Fig1_desmognathus-QP-muscle.jpg', 'Deban & Richardson 2017', { label: 'quadratopectoralis · VII', at: 1 }),
+        I('Deban2017_Fig4_head-flexion-AM-ligament.jpg', 'Deban & Richardson 2017', { label: 'atlanto-mandibular ligament', at: 2 })
       ],
-      foot: [{ text: 'stalked occipital condyles', at: 2 }],
+      foot: [{ text: 'stalked occipital condyles', at: 3 }],
       notes: [
+        'Dusky salamanders: stream-side plethodontids that wedge under rocks. Note the thick neck.',
         'QP is a splinter of the interhyoideus, so a VII muscle. It pulls the back of the skull down toward the pectoral girdle.',
         'AM ligament runs from the atlas through a trochlea on the otic–parietal region to the lower jaw. Flex the head, the ligament goes taut and drags the mandible shut.',
         'Stalked condyles shorten the out-lever as the head flexes. Fig 4 is the slide: raised → resting → flexed, levers drawn.'
@@ -321,7 +379,7 @@ Gnathostomata
     }),
 
     K.plate('bite', 'Biting with the neck', {
-      min: 3,
+      min: 2.5,
       head: { name: 'Biting with the neck', facts: '_Desmognathus_' },
       panels: [
         I('J2_desmognathine_head_flexion_bite.gif', 'Schematic on _Plethodon glutinosus_ · ' + MS('UF Herp 3183', '000116731')),
@@ -379,13 +437,19 @@ Gnathostomata
     K.plate('ballistic', 'Ballistic tongues', {
       min: 2.5,
       head: { name: 'Ballistic tongues', facts: 'bolitoglossine plethodontids' },
-      panels: [],
-      foot: [{ text: 'subarcualis rectus · IX' }, { text: 'elastic recoil', at: 1 }, { text: 'rectus cervicis: retraction', at: 2 }, { text: 'webbed, pad-like feet', at: 3 }],
+      panels: [
+        I('ph_Bolitoglossa.jpg', '_Bolitoglossa_', { label: 'bolitoglossine' }),
+        I('fig_tongue-projection.jpg', 'tongue skeleton, 0–6 ms', { label: 'subarcualis rectus · IX' }),
+        I('ph_Hydromantes-tongue.jpg', '_Hydromantes_', { label: 'elastic recoil', at: 1 })
+      ],
+      foot: [{ text: 'rectus cervicis: retraction', at: 2 }],
       notes: [
         'Subarcualis rectus (third arch, IX) spirals around the epibranchials and squeezes them forward like a watermelon seed.',
         'Power comes from elastic recoil of collagen in the muscle sheath; peak power well beyond muscle alone (_Hydromantes_, _Bolitoglossa_; Deban et al. 2007).',
         '⚠ Not "fastest vertebrate movement". Say "among the most powerful (power per unit mass) movements measured in vertebrates".',
-        'Bolitoglossine feet: progenesis leaves fully webbed pad-like feet, useful on wet leaves.'
+        'Bolitoglossine feet: progenesis leaves fully webbed pad-like feet, useful on wet leaves.',
+        'Video in the 2022 notes: youtube.com/watch?v=Fu8zrLCxiH8.',
+        '⚑ The 0–6 ms figure and both photos are from the 2022 slides (web image search); sources not recorded. The figure looks like Deban et al.: check before citing.'
       ]
     }),
 
@@ -436,7 +500,10 @@ Gnathostomata
     K.plate('brain', 'Brain', {
       tier: 2, min: 2,
       head: { name: 'Axolotl brain', facts: 'Lazcano et al. 2021' },
-      panels: [],
+      panels: [
+        SF('1a668bb1f4bf49cc9cf93ae6c13c0e83', '"Brain of Ambystoma mexicanum" · GigaScience · Sketchfab · CC BY', { aspect: 16 / 10 }),
+        I('ph_axolotl.jpg', '_Ambystoma mexicanum_')
+      ],
       foot: [{ text: 'cerebellum ~0.15 mm³' }, { text: 'myelin: posterior only', at: 1 }, { text: 'genome ~32 Gb', at: 2 }],
       notes: [
         'MRI atlas. Myelin only in medulla, cerebellum, tectum; none in olfactory bulb or telencephalon.',
@@ -447,30 +514,60 @@ Gnathostomata
     /* ------------------------------------------------------------ newts, metamorphosis */
     K.part('p-life', 'Poison, ribs, metamorphosis'),
 
+    K.plate('ttx', 'TTX', {
+      min: 1.5,
+      head: { name: 'Tetrodotoxin', facts: '_Taricha_ vs. _Thamnophis_' },
+      panels: [
+        I('ph_Taricha-unken.jpg', '_Taricha_', { label: 'unken reflex' }),
+        I('ph_Thamnophis-Taricha.jpg', '_Thamnophis sirtalis_ eating _Taricha_', { at: 1 }),
+        I('fig_TTX-matching.jpg', 'Hanifin, Brodie & Brodie 2008', { label: 'toxicity ↔ resistance', at: 2 })
+      ],
+      notes: [
+        'Unken reflex: the newt arches and flashes its orange belly. Warning colouration for TTX in the skin.',
+        'TTX arms race: _Taricha_ toxicity and _Thamnophis sirtalis_ resistance match across a geographic mosaic. Poisonous vs. venomous is the exam-worthy distinction.',
+        '⚑ Photos and graph from the 2022 slides (web image search). The graph matches Hanifin, Brodie & Brodie 2008 (PLoS Biol.): check before citing.'
+      ]
+    }),
+
     K.plate('ribs', '_Pleurodeles_', {
-      min: 3,
+      min: 2, rows: 1,
       head: { name: '_Pleurodeles waltl_', facts: 'Iberian ribbed newt' },
       panels: [
-        I('3D_Pleurodeles-waltl_sketchfab-preview.jpg', '"Pleurodeles waltl" by 3DVirtualHerp · Sketchfab · CC BY 4.0'),
-        I('3D_MS_Pleurodeles-waltl-skull-UF93517_view1_side.jpg', '_Pleurodeles waltl_ · ' + MS('UF Herp 93517', '000116733'))
+        SF('f64efc8889934a479a1701fa4a8fb2c4', '"Pleurodeles waltl" by 3DVirtualHerp · Sketchfab · CC BY', { aspect: 16 / 10 }),
+        I('fig_Pleurodeles-ribs-b.jpg', 'Heiss et al. 2010', { label: 'rib tips through the skin', at: 1 }),
+        I('fig_Pleurodeles-ribs-CT.jpg', 'Heiss et al. 2010', { label: 'ribs rotate ~65°', at: 1 })
       ],
-      foot: [{ text: 'TTX: _Taricha_ vs. _Thamnophis_' }, { text: 'ribs rotate ~65°', at: 1 }, { text: 'poisonous → venomous?', at: 2 }],
+      foot: [{ text: 'poisonous → venomous?', at: 2 }],
       notes: [
-        'TTX arms race: _Taricha_ toxicity and _Thamnophis sirtalis_ resistance match across a geographic mosaic. Poisonous vs. venomous is the exam-worthy distinction.',
-        '⚠ The ribs are *not broken*. They rotate forward up to ~65° on flexible costovertebral joints and push through weak points in the skin at the poison glands. The skin heals; the defense is repeatable.',
+        '⚠ The ribs are *not broken*. They rotate forward up to ~65° on flexible costovertebral joints and push through weak points in the skin at the poison glands. The skin heals; the defense is repeatable (Heiss et al. 2010, J. Zool. 280:156).',
+        'Poison delivered by a wound the animal makes: is that venom? The exam-worthy distinction.',
         'Also _Tylototriton_ and _Echinotriton_.'
       ]
     }),
 
     K.grid('thyroid', 'Thyroid hormone', {
-      min: 3, reveal: 'row',
+      min: 2, reveal: 'row',
       head: ['', 'metamorphosis'],
       rows: [['marbled salamander', 'always'], ['tiger salamander', 'conditional'], ['axolotl · mudpuppy', 'obligate paedomorph'], ['regeneration', 'limbs · eyes · spinal cord · heart']],
       notes: [
         'T₄/T₃ is the metamorphic switch. 2022 exam 4: which organ controls amphibian metamorphosis *and* BAT burning in mammals? The thyroid.',
         'The axolotl can still be induced with T₄ (Huxley, c. 1920).',
-        'Schoch 2014 cites TH experiments that *add back* ossification centers in newts and frogs: bone loss and metamorphic timing are the same knob.',
-        'Regeneration is the retained ancestral condition. Trade-off: flexibility vs. positional stability (extra limbs, digits).'
+        'Schoch 2014 cites TH experiments that *add back* ossification centers in newts and frogs: bone loss and metamorphic timing are the same knob.'
+      ]
+    }),
+
+    K.plate('regen', 'Regeneration', {
+      min: 1.5,
+      head: { name: 'Regeneration', facts: 'an old trait, kept' },
+      panels: [
+        I('ph_axolotl-regeneration.jpg', 'axolotl forelimb regrowing', { label: 'limbs · eyes · spinal cord · heart' }),
+        I('fig_Micromelerpeton-regeneration.jpg', '_Micromelerpeton_ · Fröbisch, Bickelmann & Witzmann 2014', { label: 'regenerated limb, ~300 Ma', at: 1 })
+      ],
+      notes: [
+        'Regeneration is the retained ancestral condition. Trade-off: flexibility vs. positional stability (extra limbs, digits).',
+        'Permian temnospondyl _Micromelerpeton_ shows the same regeneration abnormalities as salamanders: the ability predates crown salamanders.',
+        'Frogs lose regeneration after metamorphic climax.',
+        '⚑ Photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -499,7 +596,7 @@ Gnathostomata
     K.tree('practice-a', 'Practice tree: answer', {
       min: 3, src: PRACTICE,
       steps: [{}, { hi: ['Batrachia'] }, { hi: ['Caudata'] }],
-      notes: ['Order inside Salamandroidea is not tested: leave it as a polytomy.', 'Midwife toad (discoglossid) is closer to tree frogs than _Ascaphus_ is.']
+      notes: ['Order inside Salamandroidea is shown but not tested: the mudpuppy sits closer to the red-backed salamander than either does to the newt (Hime et al. 2021).', 'Midwife toad (discoglossid) is closer to tree frogs than _Ascaphus_ is.']
     })
   ];
 

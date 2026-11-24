@@ -20,7 +20,19 @@
   K.img = function (name, cap, extra) {
     const d = (window.DIMS || {})[name];
     if (!d) throw new Error('No size for ' + name + ': run python3 tools/assets.py');
-    return Object.assign({ src: 'img/' + name, w: d[0], h: d[1], cap: cap || '' }, extra || {});
+    const p = Object.assign({ src: 'img/' + name, w: d[0], h: d[1], cap: cap || '' }, extra || {});
+    /* swap: [{src, at}] puts another picture of the same size in this panel from build at */
+    if (p.swap) p.swap = p.swap.map((x) => Object.assign({}, x, { src: 'img/' + x.src }));
+    return p;
+  };
+
+  /* A Sketchfab model, live: drag to turn it, scroll to zoom. uid is the 32-character id at
+   * the end of the model's URL. It loads only while its slide is on screen and needs the
+   * network. extra.aspect (default 4/3) shapes the frame. */
+  K.sf = function (uid, cap, extra) {
+    const a = (extra && extra.aspect) || 4 / 3;
+    const q = 'autostart=1&preload=1&transparent=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_settings=0&ui_help=0&ui_vr=0&ui_ar=0&ui_annotations=0&ui_hint=2&dnt=1';
+    return Object.assign({ embed: `https://sketchfab.com/models/${uid}/embed?${q}`, w: 1200, h: Math.round(1200 / a), up: 1, cap: cap || '' }, extra || {});
   };
 
   const seg = (id, title, def, builds, items) => ({
@@ -44,12 +56,15 @@
      * stamp, so it gets the full-height column on the right instead. */
     let panels = def.panels, tall = def.tall;
     const asp = (p) => p.w / p.h;
-    if (!tall && !def.side && panels.length === 2 && Math.min(...panels.map(asp)) < 0.95 && Math.max(...panels.map(asp)) > 1.5) {
-      tall = panels.find((p) => asp(p) < 0.95);
+    const portrait = panels.filter((p) => asp(p) < 0.95);
+    if (!tall && !def.side && !def.between && !panels.some((p) => p.embed) && portrait.length === 1 && (panels.length === 2
+      ? Math.max(...panels.map(asp)) > 1.5
+      : panels.length > 2 && panels.every((p) => p === portrait[0] || asp(p) > 1.2))) {
+      tall = portrait[0];
       panels = panels.filter((p) => p !== tall);
     }
     return seg(id, title, def, range(n + 1), [Object.assign({ kind: 'plate', box }, {
-      head: def.head || { name: title }, panels, foot: def.foot, side: def.side, tall, mini: def.mini, legend: def.legend, between: def.between, key: def.key
+      head: def.head || { name: title }, panels, foot: def.foot, side: def.side, tall, mini: def.mini, legend: def.legend, between: def.between, key: def.key, rows: def.rows
     })]);
   };
 

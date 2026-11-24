@@ -30,9 +30,10 @@ Mammalia
     Eutheria
       Atlantogenata
         armadillo
-        ~Afrotheria
-          aardvark
-          golden mole
+        Afrotheria
+          .
+            aardvark
+            golden mole
           elephant
       Boreoeutheria
         Laurasiatheria
@@ -516,7 +517,7 @@ Gnathostomata
     K.tree('practice-a', 'Practice tree: answer', {
       min: 3, src: PRACTICE,
       steps: [{}, { hi: ['Theria'] }, { hi: ['Atlantogenata'] }, { hi: ['Boreoeutheria'] }],
-      notes: ['Afrotheria\'s internal order is not tested.']
+      notes: ['Afrotheria splits into Afroinsectiphilia (aardvark, golden moles, tenrecs, elephant shrews) and Paenungulata (elephants, sirenians, hyraxes). Shown, not tested.']
     }),
 
     K.plate('practice2', 'Capstone tree', {

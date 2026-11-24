@@ -65,8 +65,8 @@ Diapsida
       pigeon`;
 
   const segments = [
-    K.cover('Turtles, crocodylians, tuatara', {
-      sub: 'Testudines · Crocodylia · _Sphenodon_',
+    K.cover('Diapsida', {
+      sub: 'turtles · crocodylians · tuatara',
       pic: 'img/3D_MS_Sphenodon-skull-UF11978_view1_side.jpg', cap: '_Sphenodon punctatus_ · UF Herp 11978 · oVert · MorphoSource 000011003',
       notes: [
         'Three lineages, each a small living diversity, each the survivor of a big Mesozoic radiation, each with one radically odd system:',
@@ -159,18 +159,29 @@ Diapsida
       ]
     }),
 
+    K.plate('breathe-ct', 'Ventilation muscles', {
+      min: 1,
+      head: { name: 'Ventilation muscles', facts: 'Lyson et al. 2014' },
+      panels: [I('Lyson2014_Fig1_turtle-ventilation-muscles-CT.jpg', 'Lyson et al. 2014')],
+      notes: ['Contrast-stained CT: lungs blue, the abdominal muscles pink. The next slide strips this down to a cartoon and runs it.']
+    }),
+
     K.plate('breathe', 'Breathing in a box', {
-      min: 3,
+      min: 2.5,
       head: { name: 'Breathing in a box', facts: 'Lyson et al. 2014' },
       panels: [
-        I('D01_turtle_breathing.gif', 'Schematic after Lyson et al. 2014'),
-        I('Lyson2014_Fig1_turtle-ventilation-muscles-CT.jpg', 'Lyson et al. 2014', { at: 1 })
+        I('turtle-breathing-rest.svg', 'Schematic after Lyson et al. 2014', { swap: [{ src: 'turtle-breathing-out.svg', at: 1 }, { src: 'turtle-breathing-in.svg', at: 2 }, { src: 'turtle-breathing-pulm.svg', at: 3 }] })
       ],
-      foot: [{ text: 'out: transversus thoracis + abdominis', at: 1 }, { text: 'in: obliquus abdominis + serratus', at: 2 }, { text: 'pulmonalis', at: 3 }],
-      legend: SHORTEN,
+      foot: [
+        { text: 'out: transversus thoracis + abdominis', at: 1 },
+        { text: 'in: obliquus abdominis + serratus', at: 2 },
+        { text: 'pulmonalis', at: 3 }
+      ],
       notes: [
-        'Five muscles. Expiration: transversus thoracis + transversus abdominis, a sling pressing the viscera up against the lungs. Inspiration: obliquus abdominis + serratus, a cup.',
-        'Plus the pulmonalis, a sheet around the lung of uncertain function.',
+        'Ribs are fused into the carapace, so the ribs cannot pump. The only walls that move are the soft limb pockets, and the shoulder girdle inside the shell.',
+        'Exhale (build 1): transversus thoracis + transversus abdominis, a sling pressing the viscera up against the lungs. Inhale (build 2): obliquus abdominis pulls the flank skin out and serratus swings the shoulder girdle forward, a cup that lets the viscera drop.',
+        'Plus the pulmonalis (build 3), a sheet around the lung of uncertain function.',
+        'The schematic is drawn for this deck (tools/draw_turtle_breathing.py). Red = muscle working.',
         'Your own file `turtleMuscles.png` at the course root fits here (not copied: it was still syncing).'
       ]
     }),
@@ -509,5 +520,5 @@ Diapsida
     })
   ];
 
-  window.DECK = { title: 'Turtles, crocodylians, tuatara', session: 80, minutes: 55, segments };
+  window.DECK = { title: 'Diapsida', session: 80, minutes: 55, segments };
 })();

@@ -13,12 +13,17 @@ Aves
     Galloanserae
       Galliformes | landfowl
       Anseriformes | waterfowl
-    ~Neoaves
-      Strisores | nightjars, swifts, hummingbirds
-      Columbaves | pigeons, cuckoos, bustards
-      Gruiformes | rails, cranes
-      Aequorlitornithes | waterbirds
-      Telluraves | landbirds`;
+    Neoaves
+      Mirandornithes | flamingos, grebes
+      .
+        Columbaves | pigeons, cuckoos, bustards
+        .
+          Telluraves | landbirds
+          Elementaves
+            Strisores | nightjars, swifts, hummingbirds
+            .
+              Cursorimorphae | shorebirds, rails, cranes
+              Phaethoquornithes | loons, penguins, pelicans, herons`;
   const av = (hi) => ({ src: AVES, hi });
 
   const PALAEO = `
@@ -38,9 +43,10 @@ Palaeognathae
 
   const LAND = `
 Telluraves | landbirds
-  ~Afroaves
-    hawks, eagles
-    owls
+  Afroaves
+    .
+      hawks, eagles
+      owls
     kingfishers, woodpeckers
   Australaves
     seriemas
@@ -61,12 +67,14 @@ Aves
       Anseriformes
         mallard
         goose
-    ~Neoaves
-      loon
-      pelican
-      kookaburra
+    Neoaves
       .
-        parrot
+        loon
+        pelican
+      .
+        kookaburra
+        .
+          parrot
         Passeriformes
           tyrant flycatcher
           crow`;
@@ -125,7 +133,8 @@ Aves
         'Condensed from the 2018 Aves I and II decks (Prum et al. 2015-style backbone).',
         'Targets: palaeognaths sister to all other birds; Galloanserae sister to Neoaves.',
         '⚠ The Neoaves backbone still shifts between genomic studies (Jarvis 2014; Prum 2015; Stiller et al. 2024). Test only the robust nodes.',
-        'Aequorlitornithes: flamingos + grebes, shorebirds, loons, tubenoses, penguins, storks, pelicans, cormorants.'
+        'Neoaves backbone from Stiller et al. 2024 (Nature 629:851; 363 genomes, 63,430 loci): flamingos + grebes (Mirandornithes) first, then Columbaves, then landbirds (Telluraves) vs. Elementaves. Charadriiformes + Gruiformes form Cursorimorphae. Prum 2015\'s "Aequorlitornithes" (waterbirds) does not survive: Mirandornithes, shorebirds and Phaethoquornithes land in different places.',
+        'Least stable in Stiller et al.: Strisores (sister to Telluraves in the concatenated tree, bootstrap 32) and the hoatzin (left off here). Show the whole tree; test only palaeognaths, Galloanserae, Neoaves, Telluraves.'
       ]
     }),
 
@@ -401,7 +410,7 @@ Aves
     K.tree('practice-a', 'Practice tree: answer', {
       min: 3, src: PRACTICE,
       steps: [{}, { hi: ['Galloanserae'] }, { hi: ['Neoaves'] }],
-      notes: ['The 2018 answer paired loon + pelican; the current course tree leaves Neoaves open except parrots + passerines. This slide follows the course tree.']
+      notes: ['Loon + pelican (both Phaethoquornithes, as the 2018 answer had it); kookaburra with parrots + passerines (Telluraves). Stiller et al. 2024.', 'The course tree (phylo) still leaves Neoaves open; this slide resolves it.']
     })
   ];
 

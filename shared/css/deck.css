@@ -212,6 +212,10 @@ i { font-style: italic; }
 .pl2-p { position: absolute; }
 .pl2-img { position: absolute; overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 0 0 2px var(--rule); }
 .pl2-img img { position: absolute; max-width: none; user-select: none; -webkit-user-drag: none; }
+/* a live Sketchfab model (K.sf): a dark well whatever the theme, so bone and skin read */
+.pl2-3d { background: radial-gradient(ellipse at 50% 40%, #4a4a50, #1c1c1f 75%); }
+.pl2-3d iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.pl2-3d-tag { position: absolute; left: 12px; bottom: 10px; z-index: 1; padding: 3px 12px; border-radius: 14px; font: 600 16px/1.3 var(--font-ui); color: #fff; background: rgba(0, 0, 0, 0.45); pointer-events: none; }
 .pl2-lab { position: absolute; left: 50%; transform: translateX(-50%); width: max-content; max-width: 100%; text-align: left; display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 18px; font: 600 25px/1.1 var(--font-ui); color: var(--ink-2); background: var(--card); border: 2px solid var(--rule); border-radius: 28px; text-align: left; }
 .pl2-lab svg { flex: none; width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .pl2-lab.r-else svg, .pl2-lab.r-test svg { color: var(--accent-ink); }

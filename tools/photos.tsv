@@ -1,0 +1,36 @@
+# deck	name in img/	source: <pptx under the BIOL 440 Lectures folder>::<media file>, or a URL	where it came from (for captions and credits)
+caudata	ph_Cryptobranchus.jpg	2022/Lec31_Nov16_Caudata.pptx::image8.jpeg	2022 L31 slide 7, web image search "hellbender"
+caudata	ph_Andrias-held.jpg	2022/Lec31_Nov16_Caudata.pptx::image7.jpeg	2022 L31 slide 7, web image search "andrias"
+caudata	ph_Onychodactylus.jpg	2022/Lec31_Nov16_Caudata.pptx::image11.jpeg	2022 L31 slide 8, Tetrapod Zoology (Sci. Am. blogs) 2013
+caudata	ph_Salamandrella-ice.gif	2022/Lec31_Nov16_Caudata.pptx::image12.gif	2022 L31 slide 8, web search "salamandrella frozen"
+caudata	ph_Siren.jpg	2022/Lec31_Nov16_Caudata.pptx::image14.png	2022 L31 slide 9, web search "siren salamander"
+caudata	ph_Necturus.jpg	2022/Lec31_Nov16_Caudata.pptx::image22.jpeg	2022 L31 slide 10, web search "mudpuppy"
+caudata	ph_Proteus.jpg	2022/Lec31_Nov16_Caudata.pptx::image20.jpeg	2022 L31 slide 10, web search "olm"
+caudata	ph_Dicamptodon-stream.jpg	2022/Lec31_Nov16_Caudata.pptx::image23.jpeg	2022 L31 slide 11 (Todd Pierson watermark)
+caudata	ph_Dicamptodon.jpg	2022/Lec31_Nov16_Caudata.pptx::image24.jpeg	2022 L31 slide 11 (Gary Nafis watermark)
+caudata	ph_Rhyacotriton.jpg	2022/Lec31_Nov16_Caudata.pptx::image26.jpeg	2022 L31 slide 12, web search "rhyacotritonidae"
+caudata	ph_Rhyacotriton-b.jpg	2022/Lec31_Nov16_Caudata.pptx::image27.jpeg	2022 L31 slide 12 (Todd Pierson watermark)
+caudata	ph_axolotl.jpg	2022/Lec31_Nov16_Caudata.pptx::image29.jpeg	2022 L31 slide 14, web search "axolotl"
+caudata	ph_Ambystoma-tigrinum.jpg	2022/Lec31_Nov16_Caudata.pptx::image30.png	2022 L31 slide 14, web search "tiger salamander"
+caudata	ph_Ambystoma-opacum.jpg	2022/Lec31_Nov16_Caudata.pptx::image31.png	2022 L31 slide 14, web search "marbled salamander"
+caudata	ph_Ambystoma-laterale.jpg	2022/Lec31_Nov16_Caudata.pptx::image32.jpeg	2022 L31 slide 14, web search "blue spotted salamander"
+caudata	ph_Amphiuma-eggs.jpg	2022/Lec31_Nov16_Caudata.pptx::image35.jpeg	2022 L31 slide 15, "Amphiuma means with egg clutch, May 2010"
+caudata	ph_Plethodon-yonahlossee.jpg	2022/Lec31_Nov16_Caudata.pptx::image37.jpeg	2022 L31 slide 17, web search "plethodon yonahlossee"
+caudata	ph_Eurycea-cirri.jpg	2022/Lec31_Nov16_Caudata.pptx::image39.jpeg	2022 L31 slide 17, web search "plethodon cirri"
+caudata	ph_Plethodon-eggs.jpg	2022/Lec31_Nov16_Caudata.pptx::image41.jpeg	2022 L31 slide 18 (davehuth.com watermark)
+caudata	ph_Plethodon-courtship.jpg	2022/Lec31_Nov16_Caudata.pptx::image43.jpeg	2022 L31 slide 19, web search "plethodon mating"
+caudata	ph_Desmognathus.jpg	2022/Lec31_Nov16_Caudata.pptx::image45.jpeg	2022 L31 slide 20 (Todd Pierson watermark)
+caudata	ph_Bolitoglossa.jpg	2022/Lec31_Nov16_Caudata.pptx::image48.jpeg	2022 L31 slide 22, web search "bolitoglossa"
+caudata	ph_Hydromantes-tongue.jpg	2022/Lec31_Nov16_Caudata.pptx::image50.jpeg	2022 L31 slide 22, web search "bolitoglossa tongue"
+caudata	fig_tongue-projection.jpg	2022/Lec31_Nov16_Caudata.pptx::image51.png	2022 L31 slide 23, web search "bolitoglossa tongue"
+caudata	ph_newt-larva.jpg	2022/Lec31_Nov16_Caudata.pptx::image55.jpeg	2022 L31 slide 26, web search "eastern newt larvae"
+caudata	ph_Taricha-unken.jpg	2022/Lec31_Nov16_Caudata.pptx::image59.jpeg	2022 L31 slide 26, web search "taricha unken"
+caudata	ph_Notophthalmus.jpg	2022/Lec31_Nov16_Caudata.pptx::image62.jpeg	2022 L31 slide 26, web search "eastern newt"
+caudata	ph_eft.jpg	https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Red_Eft_-_Notophthalmus_viridescens%2C_Shenandoah_River_State_Park%2C_Bentonville%2C_Virginia%2C_May_28%2C_2020.jpg/1280px-Red_Eft_-_Notophthalmus_viridescens%2C_Shenandoah_River_State_Park%2C_Bentonville%2C_Virginia%2C_May_28%2C_2020.jpg	Judy Gallagher, CC BY 2.0, Wikimedia Commons
+caudata	ph_Thamnophis-Taricha.jpg	2022/Lec31_Nov16_Caudata.pptx::image70.jpeg	2022 L31 slide 29, web search "taricha resistance arms race"
+caudata	fig_TTX-matching.jpg	2022/Lec31_Nov16_Caudata.pptx::image71.PNG	2022 L31 slide 29: snake resistance vs newt toxicity (Hanifin, Brodie & Brodie 2008)
+caudata	fig_Pleurodeles-ribs-b.jpg	2022/Lec31_Nov16_Caudata.pptx::image73.png	2022 L31 slide 30: Heiss et al. 2010
+caudata	fig_Pleurodeles-ribs-CT.jpg	2022/Lec31_Nov16_Caudata.pptx::image75.jpeg	2022 L31 slide 31: Heiss et al. 2010 (via ResearchGate, Natchev)
+caudata	CT_Dicamptodon-skull.jpg	2022/Lec31_Nov16_Caudata.pptx::image3.jpeg	2022 L31 slide 5: DigiMorph, Dicamptodon ensatus, sagittal
+caudata	ph_axolotl-regeneration.jpg	2022/Lec31_Nov16_Caudata.pptx::image87.jpeg	2022 L31 slide 39, web search "caudata regeneration"
+caudata	fig_Micromelerpeton-regeneration.jpg	2022/Lec31_Nov16_Caudata.pptx::image88.jpeg	2022 L31 slide 40: news.brown.edu, Fröbisch et al. 2014

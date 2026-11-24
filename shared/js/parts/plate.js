@@ -15,6 +15,7 @@
  * D.plateRow lays pictures out inside a box and is shared with fig (the aside).
  * A picture can carry crop: [left, top, right, bottom] as fractions of the file;
  * the crop is what is shown, edge to edge, so a zoom can never miss its target.
+ * A picture can carry swap: [{src, at}]: same-size pictures that replace it at those builds.
  */
 (function () {
   'use strict';
@@ -69,13 +70,27 @@
       const sl = vertical ? box[2] : slotW[k];
       const e = D.el('div', 'pl2-p pl2-x', root);
       e.style.cssText = `left:${Math.round(vertical ? box[0] : x)}px;top:${Math.round(y)}px;width:${Math.round(sl)}px;height:${Math.round(sh + ex)}px;`;
-      const fr = D.el('div', 'pl2-img', e);
+      let swaps = null;
+      const fr = D.el('div', 'pl2-img' + (p.embed ? ' pl2-3d' : ''), e);
       const off = Math.round((sl - sw) / 2);
       fr.style.cssText = `left:${off}px;top:0;width:${Math.round(sw)}px;height:${Math.round(sh)}px;`;
-      const im = D.el('img', '', fr);
-      const s = sw / i.cw;
-      im.draggable = false; im.alt = p.alt || ''; im.src = p.src;
-      im.style.cssText = `width:${(p.w * s).toFixed(2)}px;height:${(p.h * s).toFixed(2)}px;left:${(-i.c[0] * p.w * s).toFixed(2)}px;top:${(-i.c[1] * p.h * s).toFixed(2)}px;`;
+      if (p.embed) {
+        /* the iframe is made by load() when the slide shows, and dropped when it leaves */
+        D.el('div', 'pl2-3d-tag', fr, '3D · drag to turn');
+        fr.dataset.embed = p.embed;
+      } else {
+        const im = D.el('img', '', fr);
+        const s = sw / i.cw;
+        im.draggable = false; im.alt = p.alt || ''; im.src = p.src;
+        im.style.cssText = `width:${(p.w * s).toFixed(2)}px;height:${(p.h * s).toFixed(2)}px;left:${(-i.c[0] * p.w * s).toFixed(2)}px;top:${(-i.c[1] * p.h * s).toFixed(2)}px;`;
+        if (p.swap) {
+          swaps = [{ im, at: p.at || 0 }].concat(p.swap.map((x) => {
+            const m = D.el('img', '', fr);
+            m.draggable = false; m.alt = ''; m.src = x.src; m.style.cssText = im.style.cssText;
+            return { im: m, at: x.at };
+          }));
+        }
+      }
       let top = sh + 6;
       if (p.label) {
         const l = D.el('div', 'pl2-lab' + (p.role ? ' r-' + p.role : ''), e, ROLE(p.role) + `<span>${D.fmt(p.label)}</span>`);
@@ -83,7 +98,7 @@
         top += LAB - 4;
       }
       if (p.cap) D.el('div', 'pl2-cap', e, D.fmt(p.cap)).style.cssText = `top:${Math.round(top)}px;`;
-      out.push({ e, at: p.at || 0, x, y, w: sl, h: sh });
+      out.push({ e, at: p.at || 0, x: vertical ? box[0] : x, y, w: sl, h: sh, iw: sw, swaps });
       if (vertical) y += sh + ex + G; else x += slotW[k] + G;
     });
     return out;
@@ -112,7 +127,9 @@
         const e = D.el('div', 'pl2-lab big pl2-x' + (c.role ? ' r-' + c.role : ''), f, ROLE(c.role) + `<span>${D.fmt(c.text)}</span>`);
         timed.push({ e, at: c.at || 0 });
       });
-      if (def.side) { f.classList.add('side'); right = 1070; } else bottom = H - 84;
+      /* chips wrap: guess how many rows of them there are from their length */
+      const chipW = def.foot.reduce((t, c) => t + String(c.text).replace(/[_*]/g, '').length * 14 + 70, 0);
+      if (def.side) { f.classList.add('side'); right = 1070; } else bottom = H - 84 * Math.ceil(chipW / 1480);
     }
     if (def.key) {
       const k = D.el('div', 'pl2-key', root);
@@ -123,12 +140,15 @@
     if (def.tall) {
       const t = def.tall, c = t.crop || [0, 0, 1, 1], free = H - top - 8;
       const tallH = free - (t.label ? 60 : 0) - (t.cap ? CAPH : 0);
-      const tallW = Math.round(tallH * (t.w * (c[2] - c[0])) / (t.h * (c[3] - c[1])));
+      // the column is at least as wide as the picture's label, or plateRow shrinks the picture to fit the label
+      const tallW = Math.max(Math.round(tallH * (t.w * (c[2] - c[0])) / (t.h * (c[3] - c[1]))), t.label ? Math.ceil(labW(t)) : 0);
       right -= tallW + GAP;
       els = D.plateRow(root, [t], [right + GAP, top + 8, tallW, free], 'row', { lab: 60 });
       if (foot) foot.style.right = (1600 - right) + 'px';
     }
-    els = els.concat(D.plateRow(root, def.panels, [40, top + 8, right - 40, bottom - top - 8], 'row', { gap: def.between ? MIDGAP : 0 }));
+    els = els.concat(def.between || def.rows === 1
+      ? D.plateRow(root, def.panels, [40, top + 8, right - 40, bottom - top - 8], 'row', { gap: def.between ? MIDGAP : 0 })
+      : rows(root, def.panels, [40, top + 8, right - 40, bottom - top - 8]));
     if (def.between) {
       const a = els[0], b = els[1], m = def.between;
       const card = D.el('div', 'pl2-lab big pl2-x pl2-mid' + (m.role ? ' r-' + m.role : ''), root, ROLE(m.role) + `<span>${D.fmt(m.text)}</span>`);
@@ -136,7 +156,67 @@
       timed.push({ e: card, at: 0 });
     }
     return {
-      show(b) { els.concat(timed).forEach((k) => k.e.classList.toggle('shown', b >= k.at)); }
+      show(b) {
+        els.concat(timed).forEach((k) => k.e.classList.toggle('shown', b >= k.at));
+        els.forEach((k) => {
+          if (b >= k.at) D.load3d(k.e);
+          if (k.swaps) {  // the latest picture whose build has come shows; the rest hide
+            const cur = k.swaps.filter((w) => b >= w.at).pop() || k.swaps[0];
+            k.swaps.forEach((w) => { w.im.style.visibility = w === cur ? 'visible' : 'hidden'; });
+          }
+        });
+      },
+      hide() { root.querySelectorAll('.pl2-3d iframe').forEach((f) => f.remove()); }
     };
   };
+
+  /* Three or four small pictures in one row leave the slide half empty. Lay the panels
+   * out as one row and as every two-row split (order kept), and keep the layout that
+   * shows the most picture (see the score below). */
+  function rows(root, panels, box) {
+    const tries = [[panels]];
+    for (let k = 1; k < panels.length; k++) tries.push([panels.slice(0, k), panels.slice(k)]);
+    /* and, from three panels up, one panel full height on the left (the 3D model if there is
+     * one, else the first) with the rest stacked in a column beside it */
+    const big = panels.find((p) => p.embed) || panels[0];
+    if (panels.length >= 3) [0.5, 0.6, 0.7].forEach((f) => tries.push({ big, col: panels.filter((p) => p !== big), f }));
+    let best = null;
+    tries.forEach((t) => {
+      const layer = D.el('div', 'pl2', root);
+      let flat, out;
+      if (t.big) {
+        const lw = box[2] * t.f;
+        flat = [t.big].concat(t.col);
+        out = D.plateRow(layer, [t.big], [box[0], box[1], lw - GAP / 2, box[3]], 'row')
+          .concat(D.plateRow(layer, t.col, [box[0] + lw + GAP / 2, box[1], box[2] - lw - GAP / 2, box[3]], 'col'));
+      } else {
+        const hh = t.length === 1 ? box[3] : (box[3] - GAP) / 2;
+        flat = [].concat(...t);
+        out = [].concat(...t.map((row, r) => D.plateRow(layer, row, [box[0], box[1] + r * (hh + GAP), box[2], hh], 'row')));
+      }
+      /* score: each picture's linear size (so one big and one stamp loses to two fair-sized),
+       * a 3D model counting extra because it is no use small, and a nudge toward one row */
+      const area = out.reduce((a, o, i) => a + Math.sqrt(o.iw * o.h) * (flat[i].embed ? 1.5 : 1), 0) * (t.length === 1 ? 1.05 : 1);
+      if (!best || area > best.area) { if (best) best.layer.remove(); best = { layer, out, area }; } else layer.remove();
+    });
+    return best.out;
+  }
+
+  /* A Sketchfab frame comes alive when its panel first shows. */
+  D.load3d = function (panel) {
+    const fr = panel.querySelector('.pl2-3d');
+    if (!fr || fr.querySelector('iframe')) return;
+    const f = D.el('iframe', '', fr);
+    f.title = '3D model'; f.allow = 'autoplay; fullscreen; xr-spatial-tracking';
+    f.setAttribute('allowfullscreen', ''); f.src = fr.dataset.embed;
+  };
+
+  /* A click in a model gives the iframe the keyboard, and the deck's keys stop working.
+   * Hand the keys back as soon as the pointer is over the deck again. */
+  const giveBack = () => { const a = document.activeElement; if (a && a.tagName === 'IFRAME') a.blur(); };
+  document.addEventListener('pointermove', giveBack);
+  window.addEventListener('blur', () => setTimeout(() => {
+    const a = document.activeElement;
+    if (a && a.tagName === 'IFRAME' && !a.matches(':hover')) a.blur();
+  }, 0));
 })();
