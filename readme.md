@@ -39,9 +39,11 @@ Other keys: → / space next, ← back, `[` `]` previous/next slide, **L** level
 - `<deck>/img/`, `<deck>/js/dims.js`: written by `python3 tools/assets.py`, which copies
   each picture `content.js` names from the outlines folder (figures to JPEG; the GIFs with
   their drawn-in title and caption cropped off). `--prune` removes unused files.
-- Photos of the animals come from the old BIOL 440 PowerPoints (and the odd Wikimedia
-  Commons picture): `tools/photos.tsv` lists each one, which deck and slide it came from,
-  and `python3 tools/photos.py` copies them into `img/` (`ph_*.jpg`, `fig_*.jpg`). Run it
+- Photos of the animals are CC-licensed iNaturalist or Wikimedia Commons pictures where a
+  clear one exists, credited in the caption (photographer · source · licence), and
+  otherwise pictures from the old BIOL 440 PowerPoints. `tools/photos.tsv` lists each one
+  and where it came from (the iNaturalist observation, or the deck and slide), and
+  `python3 tools/photos.py` fetches them into `img/` (`ph_*.jpg`, `fig_*.jpg`). Run it
   before `assets.py`.
 - 3D models are live Sketchfab viewers (`K.sf(uid, caption)` in `content.js`): drag to turn,
   scroll to zoom. A viewer loads when its slide comes up and is dropped when the slide
@@ -56,10 +58,11 @@ Other keys: → / space next, ← back, `[` `]` previous/next slide, **L** level
 
 - **Figures are copyrighted** paper figures, published here with a citation on each, as
   in fs110. The 3D renders carry their Sketchfab licence or MorphoSource specimen line.
-- **Photo credits.** Most photos from the old slides were found by web image search and
-  the source was never recorded. Each slide's notes mark these with ⚑; the caption carries
-  a credit only where one is known (a watermark, or the source in the slide's alt text).
-  Find or replace them before the decks are public. `tools/photos.tsv` says where each came from.
+- **Photo credits.** Pictures kept from the old slides (no clean CC replacement: cirri,
+  courtship, tongue projection, garter snake eating a newt, the olm, the aquatic adult
+  newt, regeneration) were found by web image search and their sources were never
+  recorded. Each slide's notes mark these with ⚑; caption them when the source turns up.
+  `tools/photos.tsv` says where each came from.
 - **3D models need the network.** If the room's connection is bad, the panel stays dark;
   the photos on the same slide still carry it.
 - **The remaining static 3D renders are small** (450–750 px wide), so slides never enlarge

@@ -54,7 +54,7 @@ Gnathostomata
   const segments = [
     K.cover('Caudata', {
       sub: 'Urodela · salamanders',
-      pic: 'img/ph_Cryptobranchus.jpg', cap: '_Cryptobranchus alleganiensis_, the hellbender',
+      pic: 'img/ph_Cryptobranchus.jpg', cap: '_Cryptobranchus alleganiensis_, the hellbender · Dominic · iNaturalist · CC BY',
       notes: ['Salamanders were promised as the treat for after Thanksgiving (lec24).', 'Caudata (_cauda_, tail) = Urodela (_oura_ + _dēlos_, visible tail). Interchangeable.']
     }),
 
@@ -63,14 +63,14 @@ Gnathostomata
       head: { name: '_Homo diluvii testis_', facts: 'Scheuchzer 1726' },
       panels: [
         SF('2b84320f2a2b4493a9a2a8f8ffe5626b', 'The holotype, Teylers Museum · "Andrias scheuchzeri Holotype" by Olof Moleman · Sketchfab', { aspect: 16 / 10 }),
-        I('ph_Andrias-held.jpg', 'Chinese giant salamander', { label: '_Andrias_ today', at: 2 })
+        I('ph_Andrias.jpg', '_Andrias japonicus_ · Lada Malek · iNaturalist · CC BY-NC', { label: '_Andrias_ today', at: 2 })
       ],
       foot: [{ text: '"a man drowned in the Flood"', at: 0 }, { text: 'Cuvier, c. 1811', at: 1 }, { text: '_Andrias scheuchzeri_', at: 2 }],
       notes: [
         '1726: Scheuchzer describes a skeleton from Öhningen as a man drowned in Noah\'s flood. The 3D model is that slab: turn it and find the skull, the spine, the forelimbs.',
         'Cuvier (c. 1811) shows it is a giant salamander. Comparative anatomy beat the story in ~85 years.',
         'Same genus alive today in China and Japan. The fossil is Miocene European: the family once spanned Laurasia (comes back with the disjunct distribution).',
-        '⚑ Photo from the 2022 slides (web image search); source not recorded.'
+        'The living _Andrias_ in the photo is the Japanese giant salamander, to ~1.4 m.'
       ]
     }),
 
@@ -139,7 +139,7 @@ Gnathostomata
       min: 2.5, mini: at('Cryptobranchidae'),
       head: { name: 'Cryptobranchidae', facts: '_Andrias_ · _Cryptobranchus_' },
       panels: [
-        I('ph_Cryptobranchus.jpg', '_Cryptobranchus alleganiensis_', { label: 'hellbender: skin folds' }),
+        I('ph_Cryptobranchus-hand.jpg', '_Cryptobranchus alleganiensis_ · Jance S Carter · iNaturalist · CC BY-NC', { label: 'hellbender: skin folds' }),
         SF('879fc03673e84b00a788290ca835ae4e', '_Andrias japonicus_ FMNH 31356 · Blackburn Lab · Sketchfab', { label: '_Andrias_ skeleton', at: 1, aspect: 16 / 10 })
       ],
       foot: [{ text: '1 pair of gill slits' }, { text: 'E Asia + E North America', at: 1 }],
@@ -148,7 +148,6 @@ Gnathostomata
         'Hellbender ("snot otter"), ~70 cm, fast cold streams of Appalachia and the Ozarks. Breathes mostly through its baggy lateral skin.',
         'Adults lose the gills but keep one pair of gill slits (Iordansky 2001).',
         'Disjunct: eastern Asia and eastern North America, nothing between. Paddlefish and _Alligator_ show the same pattern: a once-Laurasian group, relict at both ends.',
-        '⚑ Hellbender photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -157,15 +156,14 @@ Gnathostomata
       head: { name: 'Hynobiidae', facts: 'Asia' },
       panels: [
         SF('31cd72d784ae4190b1b05f2cf0a72613', '_Hynobius nebulosus_, live scan · ffish.asia / floraZia · Sketchfab · CC0', { label: '_Hynobius_', aspect: 16 / 10 }),
-        I('ph_Onychodactylus.jpg', 'Tetrapod Zoology (Sci. Am. blogs) 2013', { label: '_Onychodactylus_: lungless', at: 1 }),
-        I('ph_Salamandrella-ice.gif', '_Salamandrella keyserlingii_', { label: '_Salamandrella_: freezes', at: 2 })
+        I('ph_Onychodactylus.jpg', '_O. fischeri_ · Alexander A. Fomichev · iNaturalist · CC BY', { label: '_Onychodactylus_: lungless', at: 1 }),
+        I('ph_Salamandrella.jpg', '_Salamandrella keyserlingii_ · Ilya Filippov · iNaturalist · CC BY', { label: '_Salamandrella_: freezes', at: 2 })
       ],
       foot: [{ text: 'external fertilization' }, { text: 'lungs (most)' }],
       notes: [
         '~90 species, Asia. The 3D model is a photogrammetry scan of a live clouded salamander.',
         '⚠ The 440 notes call Hynobiidae lungless. Most have lungs. Only _Onychodactylus_ is lungless, independently of plethodontids (Lewis & Hanken 2017).',
         '_Salamandrella keyserlingii_ survives freezing, reportedly to −35 °C and below.',
-        '⚑ _Salamandrella_ clip from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -173,7 +171,7 @@ Gnathostomata
       min: 2, mini: at('Sirenidae'),
       head: { name: 'Sirenidae', facts: '_Siren_ · _Pseudobranchus_' },
       panels: [
-        I('ph_Siren.jpg', '_Siren_', { label: 'external gills, forelimbs only' }),
+        I('ph_Siren.jpg', '_Siren reticulata_ · Daniel Folds · iNaturalist · CC BY-NC', { label: 'external gills, forelimbs only' }),
         SF('f258d5a50e8d448ab1ccb6830ae28cf0', '"Lesser Siren Skeleton" · Blackburn Lab · Sketchfab', { label: 'no hind limbs, no pelvis', aspect: 16 / 10 })
       ],
       foot: [{ text: 'horny beak' }, { text: '3 pairs of gill slits' }, { text: 'no prefrontal', at: 1 }],
@@ -181,8 +179,7 @@ Gnathostomata
         'SE US, permanently gilled. Keratinous beak on a toothless premaxilla (Iordansky 2001).',
         'Turn the skeleton: shoulder girdle and tiny forelimbs, then nothing behind but vertebrae.',
         'Sirens and proteids lack prefrontals, bones that normally ossify at metamorphosis.',
-        'Aestivate in a mucus cocoon when ponds dry.',
-        '⚑ Photo from the 2022 slides (web image search); source not recorded.'
+        'Aestivate in a mucus cocoon when ponds dry. The photo is the reticulated siren, described only in 2018.'
       ]
     }),
 
@@ -190,7 +187,7 @@ Gnathostomata
       min: 2, mini: at('Proteidae'),
       head: { name: 'Proteidae', facts: '_Necturus_ · _Proteus_' },
       panels: [
-        I('ph_Necturus.jpg', '_Necturus maculosus_', { label: 'mudpuppy' }),
+        I('ph_Necturus.jpg', '_Necturus maculosus_ · Matt Keevil · iNaturalist · CC BY-NC', { label: 'mudpuppy' }),
         I('ph_Proteus.jpg', '_Proteus anguinus_', { label: 'olm' }),
         SF('c04e618ff93b4af18b0113f159503ed7', '"Necturus Skull (Labeled)" by jdb56 · Sketchfab · CC BY', { at: 1, aspect: 1 }),
         I('Bauer1997_Fig3_Necturus-depressors.jpg', 'Bauer 1997', { label: 'ceratomandibularis', at: 2 })
@@ -200,7 +197,7 @@ Gnathostomata
         'Opisthotic stays separate from the exoccipital: a larval condition (Iordansky 2001).',
         '_Necturus_ has a uniquely complex ceratomandibularis: the proteid autapomorphy (Bauer 1997).',
         'Olm: depigmented cave form, eyes under the skin, predicted lifespan >100 years (Voituron et al. 2011).',
-        '⚑ Photos from the 2022 slides (web image search); sources not recorded.'
+        '⚑ Olm photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -208,7 +205,7 @@ Gnathostomata
       min: 2, mini: at('Amphiumidae'),
       head: { name: 'Amphiumidae', facts: '_Amphiuma_' },
       panels: [
-        I('ph_Amphiuma-eggs.jpg', '_Amphiuma means_ with its eggs', { label: '_A. means_: 2 toes' }),
+        I('ph_Amphiuma-limb.jpg', '_Amphiuma means_ · Clint Gibson · iNaturalist · CC BY-NC', { label: '_A. means_: 2 toes' }),
         SF('95e31f7b5cc14c8fbcc71cecd6e18ac8', '"Two-Toed Amphiuma, Amphiumidae" · Florida Museum · Sketchfab', { aspect: 16 / 10 }),
         I('Iordansky2001_Fig1_Amphiuma-skull.jpg', 'Iordansky 2001', { label: 'temporal crest', at: 1 })
       ],
@@ -217,39 +214,38 @@ Gnathostomata
         'Three species, told apart by toe count. One pair of gill slits. Females coil around their eggs.',
         'Adult-type skull: firm temporal crest, pinnate adductors working over a parietal "pulley" (Iordansky 2001).',
         'Keep the larval ceratomandibularis into adulthood (Bauer 1997).',
-        '⚑ Photo from the 2022 slides ("Amphiuma means with egg clutch, May 2010"); photographer not recorded.'
       ]
     }),
 
     K.plate('rhyaco', 'Rhyacotritonidae', {
       tier: 2, min: 0.5, mini: at('Rhyacotritonidae'),
       head: { name: 'Rhyacotritonidae', facts: 'Pacific Northwest' },
-      panels: [I('ph_Rhyacotriton.jpg', '_Rhyacotriton_'), I('ph_Rhyacotriton-b.jpg', '_Rhyacotriton_ · Todd Pierson')],
+      panels: [I('ph_Rhyacotriton.jpg', '_R. kezeri_ · corndog · iNaturalist · CC BY-NC'), I('ph_Rhyacotriton-b.jpg', '_R. variegatus_ · spencer_riffle · iNaturalist · CC BY-NC')],
       foot: [{ text: '4 species' }, { text: 'no paedomorphs' }],
-      notes: ['Four species, Pacific Northwest, no paedomorphic members. Cold seeps and splash zones.', '⚑ Left photo from the 2022 slides; source not recorded.']
+      notes: ['Four species, Pacific Northwest, no paedomorphic members. Cold seeps and splash zones.']
     }),
 
     K.plate('ambystoma', 'Ambystomatidae', {
       min: 2, mini: at('Ambystomatidae'),
       head: { name: 'Ambystomatidae', facts: 'mole salamanders · axolotl' },
       panels: [
-        I('ph_Ambystoma-tigrinum.jpg', '_A. tigrinum_', { label: 'tiger' }),
-        I('ph_Ambystoma-opacum.jpg', '_A. opacum_', { label: 'marbled' }),
-        I('ph_axolotl.jpg', '_A. mexicanum_', { label: 'axolotl' }),
-        I('ph_Ambystoma-laterale.jpg', '_A. laterale_', { label: 'blue-spotted', at: 1 })
+        I('ph_Ambystoma-tigrinum.jpg', '_A. mavortium_ · Yinan Li · iNaturalist · CC BY-NC', { label: 'tiger' }),
+        I('ph_Ambystoma-opacum.jpg', '_A. opacum_ · Max Olson · iNaturalist · CC BY-NC', { label: 'marbled' }),
+        I('ph_axolotl.jpg', '_A. mexicanum_, wild type · Juan Cruzado Cortés · iNaturalist · CC BY-SA', { label: 'axolotl' }),
+        I('ph_Ambystoma-laterale.jpg', '_A. laterale_ · Nick Tepper · iNaturalist · CC BY-NC', { label: 'blue-spotted', at: 1 })
       ],
       foot: [{ text: 'vernal pools' }, { text: 'unisexual _Ambystoma_', at: 1 }, { text: 'kleptogenesis', at: 1 }],
       notes: [
         'Unisexual _Ambystoma_: all-female polyploids that "steal" sperm, mostly from blue-spotted and Jefferson salamanders. Lineage ~5 Myr old (Bogart et al.).',
         '⚠ Drop the 440 "natural de-extinction" framing; present it as genome-stealing.',
-        '⚑ Photos from the 2022 slides (web image search); sources not recorded.'
+        'The tiger in the photo is the barred tiger salamander, _A. mavortium_, the western split from _A. tigrinum_. Wild axolotls are dark; the pink ones are a lab line.'
       ]
     }),
 
     K.plate('dicampto', 'Dicamptodontidae', {
       tier: 2, min: 0.5, mini: at('Dicamptodontidae'),
       head: { name: 'Dicamptodontidae', facts: 'Pacific giant salamanders' },
-      panels: [I('ph_Dicamptodon.jpg', '_Dicamptodon_ · Gary Nafis'), I('ph_Dicamptodon-stream.jpg', '_Dicamptodon_ larva · Todd Pierson')],
+      panels: [I('ph_Dicamptodon.jpg', '_D. tenebrosus_ · Tony Iwane · iNaturalist · CC BY-NC'), I('ph_Dicamptodon-stream.jpg', '_Dicamptodon_ larva · Todd Pierson')],
       foot: [{ text: 'facultative paedomorphs' }],
       notes: ['Some species are facultatively paedomorphic. Adults to ~35 cm; they bark.']
     }),
@@ -258,7 +254,7 @@ Gnathostomata
       min: 3, mini: at('Plethodontidae'),
       head: { name: 'Plethodontidae', facts: 'lungless salamanders' },
       panels: [
-        I('ph_Plethodon-yonahlossee.jpg', '_Plethodon yonahlossee_', { label: 'no lungs' }),
+        I('ph_Plethodon-yonahlossee.jpg', '_Plethodon yonahlossee_ · Ty Smith · iNaturalist · CC BY-NC', { label: 'no lungs' }),
         I('ph_Eurycea-cirri.jpg', '_Eurycea_, males', { label: 'nasolabial groove · cirri', at: 1 }),
         I('ph_Plethodon-courtship.jpg', '_Plethodon_ courtship', { label: 'mental gland', at: 1 }),
         I('ph_Plethodon-eggs.jpg', '_Plethodon_ · davehuth.com', { label: 'direct development', at: 2 })
@@ -268,7 +264,7 @@ Gnathostomata
         'Nasolabial groove: slit from lip to nostril that wicks chemicals to the vomeronasal organ. A real family synapomorphy.',
         '⚠ The 440 notes say cirri "contain vomeronasal organs". Cirri are fleshy downward extensions of the groove in males of some genera (_Eurycea_); they carry chemicals up to the VNO, they do not house it.',
         'Courtship: tail-straddling walk; male slaps or scratches pheromone from the mental (chin) gland onto the female (inset in the photo).',
-        '⚑ Photos from the 2022 slides (web image search); sources not recorded except the egg photo.'
+        '⚑ Cirri and courtship photos from the 2022 slides (web image search); sources not recorded. Egg photo: davehuth.com, licence unknown.'
       ]
     }),
 
@@ -279,7 +275,7 @@ Gnathostomata
         I('ph_eft.jpg', 'Red eft · Judy Gallagher · CC BY 2.0', { label: 'keratinized skin' }),
         I('ph_Notophthalmus.jpg', '_Notophthalmus viridescens_', { label: 'aquatic adult' }),
         I('Wu2012_Fig5_Pachytriton-skull-frontosquamosal-arch.jpg', 'Wu, Wang & Hanken 2012', { label: 'frontosquamosal arch', at: 1 }),
-        I('ph_newt-larva.jpg', 'eastern newt larva', { label: 'larva', at: 2 })
+        I('ph_newt-larva.jpg', 'eastern newt larva · Brian Gratwicke · iNaturalist · CC BY', { label: 'larva', at: 2 })
       ],
       foot: [{ text: 'larva → eft → adult', at: 2 }],
       notes: [
@@ -287,7 +283,7 @@ Gnathostomata
         'Frontosquamosal arch: a bony bridge over the orbit, thought to protect the retracted eye (Wu, Wang & Hanken 2012).',
         '⚠ The 440 notes call it a convergent "temporal fenestra". Call it the frontosquamosal arch. Newts still lack a jugal.',
         'Three-stage life cycle: larva → terrestrial eft → aquatic adult.',
-        '⚑ Adult and larva photos from the 2022 slides (web image search); sources not recorded.'
+        '⚑ Aquatic-adult photo from the 2022 slides (web image search); source not recorded.'
       ]
     }),
 
@@ -365,7 +361,7 @@ Gnathostomata
       min: 3.5,
       head: { name: '_Desmognathus_', facts: 'Deban & Richardson 2017' },
       panels: [
-        I('ph_Desmognathus.jpg', '_Desmognathus_ · Todd Pierson'),
+        I('ph_Desmognathus.jpg', '_D. amphileucus_ · Zach Lim · iNaturalist · CC BY-NC'),
         I('Deban2017_Fig1_desmognathus-QP-muscle.jpg', 'Deban & Richardson 2017', { label: 'quadratopectoralis · VII', at: 1 }),
         I('Deban2017_Fig4_head-flexion-AM-ligament.jpg', 'Deban & Richardson 2017', { label: 'atlanto-mandibular ligament', at: 2 })
       ],
@@ -438,7 +434,7 @@ Gnathostomata
       min: 2.5,
       head: { name: 'Ballistic tongues', facts: 'bolitoglossine plethodontids' },
       panels: [
-        I('ph_Bolitoglossa.jpg', '_Bolitoglossa_', { label: 'bolitoglossine' }),
+        I('ph_Bolitoglossa.jpg', '_Bolitoglossa splendida_ · Wouter Beukema · iNaturalist · CC BY', { label: 'bolitoglossine' }),
         I('fig_tongue-projection.jpg', 'tongue skeleton, 0–6 ms', { label: 'subarcualis rectus · IX' }),
         I('ph_Hydromantes-tongue.jpg', '_Hydromantes_', { label: 'elastic recoil', at: 1 })
       ],
@@ -449,7 +445,7 @@ Gnathostomata
         '⚠ Not "fastest vertebrate movement". Say "among the most powerful (power per unit mass) movements measured in vertebrates".',
         'Bolitoglossine feet: progenesis leaves fully webbed pad-like feet, useful on wet leaves.',
         'Video in the 2022 notes: youtube.com/watch?v=Fu8zrLCxiH8.',
-        '⚑ The 0–6 ms figure and both photos are from the 2022 slides (web image search); sources not recorded. The figure looks like Deban et al.: check before citing.'
+        '⚑ The 0–6 ms figure and the _Hydromantes_ photo are from the 2022 slides (web image search); sources not recorded. The figure looks like Deban et al.: check before citing.'
       ]
     }),
 
@@ -502,7 +498,7 @@ Gnathostomata
       head: { name: 'Axolotl brain', facts: 'Lazcano et al. 2021' },
       panels: [
         SF('1a668bb1f4bf49cc9cf93ae6c13c0e83', '"Brain of Ambystoma mexicanum" · GigaScience · Sketchfab · CC BY', { aspect: 16 / 10 }),
-        I('ph_axolotl.jpg', '_Ambystoma mexicanum_')
+        I('ph_axolotl.jpg', '_A. mexicanum_, wild type · Juan Cruzado Cortés · iNaturalist · CC BY-SA')
       ],
       foot: [{ text: 'cerebellum ~0.15 mm³' }, { text: 'myelin: posterior only', at: 1 }, { text: 'genome ~32 Gb', at: 2 }],
       notes: [
@@ -518,14 +514,14 @@ Gnathostomata
       min: 1.5,
       head: { name: 'Tetrodotoxin', facts: '_Taricha_ vs. _Thamnophis_' },
       panels: [
-        I('ph_Taricha-unken.jpg', '_Taricha_', { label: 'unken reflex' }),
+        I('ph_Taricha.jpg', '_Taricha granulosa_ · Elliot Janca · iNaturalist · CC BY-NC', { label: 'warning belly' }),
         I('ph_Thamnophis-Taricha.jpg', '_Thamnophis sirtalis_ eating _Taricha_', { at: 1 }),
         I('fig_TTX-matching.jpg', 'Hanifin, Brodie & Brodie 2008', { label: 'toxicity ↔ resistance', at: 2 })
       ],
       notes: [
         'Unken reflex: the newt arches and flashes its orange belly. Warning colouration for TTX in the skin.',
         'TTX arms race: _Taricha_ toxicity and _Thamnophis sirtalis_ resistance match across a geographic mosaic. Poisonous vs. venomous is the exam-worthy distinction.',
-        '⚑ Photos and graph from the 2022 slides (web image search). The graph matches Hanifin, Brodie & Brodie 2008 (PLoS Biol.): check before citing.'
+        '⚑ Garter-snake photo and graph from the 2022 slides (web image search). The graph matches Hanifin, Brodie & Brodie 2008 (PLoS Biol.): check before citing.'
       ]
     }),
 

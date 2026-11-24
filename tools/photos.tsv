@@ -1,30 +1,10 @@
 # deck	name in img/	source: <pptx under the BIOL 440 Lectures folder>::<media file>, or a URL	where it came from (for captions and credits)
-caudata	ph_Cryptobranchus.jpg	2022/Lec31_Nov16_Caudata.pptx::image8.jpeg	2022 L31 slide 7, web image search "hellbender"
-caudata	ph_Andrias-held.jpg	2022/Lec31_Nov16_Caudata.pptx::image7.jpeg	2022 L31 slide 7, web image search "andrias"
-caudata	ph_Onychodactylus.jpg	2022/Lec31_Nov16_Caudata.pptx::image11.jpeg	2022 L31 slide 8, Tetrapod Zoology (Sci. Am. blogs) 2013
-caudata	ph_Salamandrella-ice.gif	2022/Lec31_Nov16_Caudata.pptx::image12.gif	2022 L31 slide 8, web search "salamandrella frozen"
-caudata	ph_Siren.jpg	2022/Lec31_Nov16_Caudata.pptx::image14.png	2022 L31 slide 9, web search "siren salamander"
-caudata	ph_Necturus.jpg	2022/Lec31_Nov16_Caudata.pptx::image22.jpeg	2022 L31 slide 10, web search "mudpuppy"
-caudata	ph_Proteus.jpg	2022/Lec31_Nov16_Caudata.pptx::image20.jpeg	2022 L31 slide 10, web search "olm"
 caudata	ph_Dicamptodon-stream.jpg	2022/Lec31_Nov16_Caudata.pptx::image23.jpeg	2022 L31 slide 11 (Todd Pierson watermark)
-caudata	ph_Dicamptodon.jpg	2022/Lec31_Nov16_Caudata.pptx::image24.jpeg	2022 L31 slide 11 (Gary Nafis watermark)
-caudata	ph_Rhyacotriton.jpg	2022/Lec31_Nov16_Caudata.pptx::image26.jpeg	2022 L31 slide 12, web search "rhyacotritonidae"
-caudata	ph_Rhyacotriton-b.jpg	2022/Lec31_Nov16_Caudata.pptx::image27.jpeg	2022 L31 slide 12 (Todd Pierson watermark)
-caudata	ph_axolotl.jpg	2022/Lec31_Nov16_Caudata.pptx::image29.jpeg	2022 L31 slide 14, web search "axolotl"
-caudata	ph_Ambystoma-tigrinum.jpg	2022/Lec31_Nov16_Caudata.pptx::image30.png	2022 L31 slide 14, web search "tiger salamander"
-caudata	ph_Ambystoma-opacum.jpg	2022/Lec31_Nov16_Caudata.pptx::image31.png	2022 L31 slide 14, web search "marbled salamander"
-caudata	ph_Ambystoma-laterale.jpg	2022/Lec31_Nov16_Caudata.pptx::image32.jpeg	2022 L31 slide 14, web search "blue spotted salamander"
-caudata	ph_Amphiuma-eggs.jpg	2022/Lec31_Nov16_Caudata.pptx::image35.jpeg	2022 L31 slide 15, "Amphiuma means with egg clutch, May 2010"
-caudata	ph_Plethodon-yonahlossee.jpg	2022/Lec31_Nov16_Caudata.pptx::image37.jpeg	2022 L31 slide 17, web search "plethodon yonahlossee"
 caudata	ph_Eurycea-cirri.jpg	2022/Lec31_Nov16_Caudata.pptx::image39.jpeg	2022 L31 slide 17, web search "plethodon cirri"
 caudata	ph_Plethodon-eggs.jpg	2022/Lec31_Nov16_Caudata.pptx::image41.jpeg	2022 L31 slide 18 (davehuth.com watermark)
 caudata	ph_Plethodon-courtship.jpg	2022/Lec31_Nov16_Caudata.pptx::image43.jpeg	2022 L31 slide 19, web search "plethodon mating"
-caudata	ph_Desmognathus.jpg	2022/Lec31_Nov16_Caudata.pptx::image45.jpeg	2022 L31 slide 20 (Todd Pierson watermark)
-caudata	ph_Bolitoglossa.jpg	2022/Lec31_Nov16_Caudata.pptx::image48.jpeg	2022 L31 slide 22, web search "bolitoglossa"
 caudata	ph_Hydromantes-tongue.jpg	2022/Lec31_Nov16_Caudata.pptx::image50.jpeg	2022 L31 slide 22, web search "bolitoglossa tongue"
 caudata	fig_tongue-projection.jpg	2022/Lec31_Nov16_Caudata.pptx::image51.png	2022 L31 slide 23, web search "bolitoglossa tongue"
-caudata	ph_newt-larva.jpg	2022/Lec31_Nov16_Caudata.pptx::image55.jpeg	2022 L31 slide 26, web search "eastern newt larvae"
-caudata	ph_Taricha-unken.jpg	2022/Lec31_Nov16_Caudata.pptx::image59.jpeg	2022 L31 slide 26, web search "taricha unken"
 caudata	ph_Notophthalmus.jpg	2022/Lec31_Nov16_Caudata.pptx::image62.jpeg	2022 L31 slide 26, web search "eastern newt"
 caudata	ph_eft.jpg	https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Red_Eft_-_Notophthalmus_viridescens%2C_Shenandoah_River_State_Park%2C_Bentonville%2C_Virginia%2C_May_28%2C_2020.jpg/1280px-Red_Eft_-_Notophthalmus_viridescens%2C_Shenandoah_River_State_Park%2C_Bentonville%2C_Virginia%2C_May_28%2C_2020.jpg	Judy Gallagher, CC BY 2.0, Wikimedia Commons
 caudata	ph_Thamnophis-Taricha.jpg	2022/Lec31_Nov16_Caudata.pptx::image70.jpeg	2022 L31 slide 29, web search "taricha resistance arms race"
@@ -34,3 +14,24 @@ caudata	fig_Pleurodeles-ribs-CT.jpg	2022/Lec31_Nov16_Caudata.pptx::image75.jpeg	
 caudata	CT_Dicamptodon-skull.jpg	2022/Lec31_Nov16_Caudata.pptx::image3.jpeg	2022 L31 slide 5: DigiMorph, Dicamptodon ensatus, sagittal
 caudata	ph_axolotl-regeneration.jpg	2022/Lec31_Nov16_Caudata.pptx::image87.jpeg	2022 L31 slide 39, web search "caudata regeneration"
 caudata	fig_Micromelerpeton-regeneration.jpg	2022/Lec31_Nov16_Caudata.pptx::image88.jpeg	2022 L31 slide 40: news.brown.edu, Fröbisch et al. 2014
+caudata	ph_Cryptobranchus.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/545660283/original.jpg	https://www.inaturalist.org/observations/302768574 — Cryptobranchus alleganiensis alleganiensis — Dominic · iNaturalist · CC BY
+caudata	ph_Cryptobranchus-hand.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/26881664/original.jpeg	https://www.inaturalist.org/observations/17645450 — Cryptobranchus alleganiensis alleganiensis — Jance S Carter · iNaturalist · CC BY-NC
+caudata	ph_Andrias.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/452115923/original.jpeg	https://www.inaturalist.org/observations/252550237 — Andrias japonicus — Lada Malek · iNaturalist · CC BY-NC
+caudata	ph_Onychodactylus.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/432497980/original.jpeg	https://www.inaturalist.org/observations/31163038 — Onychodactylus fischeri — Alexander A. Fomichev · iNaturalist · CC BY
+caudata	ph_Salamandrella.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/348676023/original.jpg	https://www.inaturalist.org/observations/197900560 — Salamandrella keyserlingii — Ilya Filippov · iNaturalist · CC BY
+caudata	ph_Siren.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/117869640/original.jpeg	https://www.inaturalist.org/observations/72322179 — Siren reticulata — Daniel Folds · iNaturalist · CC BY-NC
+caudata	ph_Necturus.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/176018394/original.jpeg	https://www.inaturalist.org/observations/104973127 — Necturus maculosus — Matt Keevil · iNaturalist · CC BY-NC
+caudata	ph_Rhyacotriton.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/246776433/original.jpg	https://www.inaturalist.org/observations/30346021 — Rhyacotriton kezeri — corndog · iNaturalist · CC BY-NC
+caudata	ph_Rhyacotriton-b.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/30877210/original.jpg	https://www.inaturalist.org/observations/20004183 — Rhyacotriton variegatus — spencer_riffle · iNaturalist · CC BY-NC
+caudata	ph_axolotl.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/321610/original.jpg	http://conabio.inaturalist.org/observations/259266 — Ambystoma mexicanum — Juan Cruzado Cortés · iNaturalist · CC BY-SA
+caudata	ph_Ambystoma-tigrinum.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/347191925/original.jpg	https://www.inaturalist.org/observations/197166045 — Ambystoma mavortium — Yinan Li · iNaturalist · CC BY-NC
+caudata	ph_Ambystoma-opacum.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/441450639/original.jpg	https://www.inaturalist.org/observations/247206487 — Ambystoma opacum — Max Olson · iNaturalist · CC BY-NC
+caudata	ph_Ambystoma-laterale.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/33773631/original.jpg	https://www.inaturalist.org/observations/21803499 — Ambystoma laterale — Nick Tepper · iNaturalist · CC BY-NC
+caudata	ph_Amphiuma-limb.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/286513673/original.jpeg	https://www.inaturalist.org/observations/165515774 — Amphiuma means — Clint Gibson · iNaturalist · CC BY-NC
+caudata	ph_Plethodon-yonahlossee.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/148882886/original.jpg	https://www.inaturalist.org/observations/90109732 — Plethodon yonahlossee — Ty Smith · iNaturalist · CC BY-NC
+caudata	ph_Bolitoglossa.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/351398258/original.jpg	https://www.inaturalist.org/observations/199273158 — Bolitoglossa splendida — Wouter Beukema · iNaturalist · CC BY
+caudata	ph_newt-larva.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/553815087/original.jpg	https://www.inaturalist.org/observations/307068881 — Notophthalmus viridescens — Brian Gratwicke · iNaturalist · CC BY
+caudata	ph_Taricha.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/99646095/original.jpg	https://www.inaturalist.org/observations/62210618 — Taricha granulosa — Elliot Janca · iNaturalist · CC BY-NC
+caudata	ph_Dicamptodon.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/5694478/original.jpg	http://www.inaturalist.org/observations/4699207 — Dicamptodon tenebrosus — Tony Iwane · iNaturalist · CC BY-NC
+caudata	ph_Desmognathus.jpg	https://inaturalist-open-data.s3.amazonaws.com/photos/30946930/original.jpeg	https://www.inaturalist.org/observations/20044684 — Desmognathus amphileucus — Zach Lim · iNaturalist · CC BY-NC
+caudata	ph_Proteus.jpg	2022/Lec31_Nov16_Caudata.pptx::image20.jpeg	2022 L31 slide 10, web search "olm"
