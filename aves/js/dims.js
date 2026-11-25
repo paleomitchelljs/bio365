@@ -1,10 +1,5 @@
 /* Written by tools/assets.py: [width, height] of each picture in img/. */
 window.DIMS = {
-  "3D_Anas-mallard-skull-joints_sketchfab-preview.jpg": [1024, 576],
-  "3D_Archilochus-ruby-throated-hummingbird_sketchfab-preview.jpg": [1024, 576],
-  "3D_Dinornis-giant-moa_sketchfab-preview.jpg": [1024, 576],
-  "3D_MS_Struthio-ostrich-skull-OUVC10636_view1_side.jpg": [521, 255],
-  "3D_Tinamus-great-tinamou_sketchfab-preview.jpg": [1024, 576],
   "Chang2009_Fig1_reptile-scale-types.jpg": [1423, 1115],
   "Chin2017_Fig1_bird-bat-flight-phylogeny.jpg": [1084, 681],
   "Chin2017_Fig2_wing-bone-loading.jpg": [1231, 1007],
@@ -19,5 +14,14 @@ window.DIMS = {
   "Johnston2014_Fig3_swan-hyoid-horns.jpg": [521, 288],
   "Johnston2014_Fig4_kestrel-tongue.jpg": [1169, 563],
   "Suzuki2014_Fig1_tinamou-scapula-coracoid.jpg": [1420, 1069],
-  "Suzuki2014_Fig4_tinamou-sternum-keel.jpg": [1416, 860]
+  "Suzuki2014_Fig4_tinamou-sternum-keel.jpg": [1416, 860],
+  "ph_Anas.jpg": [1800, 1125],
+  "ph_Apteryx.jpg": [1800, 1350],
+  "ph_Archilochus.jpg": [1800, 1350],
+  "ph_Columba.jpg": [1800, 1350],
+  "ph_Corvus-moneduloides.jpg": [1800, 1199],
+  "ph_Steatornis.jpg": [1606, 1800],
+  "ph_Struthio.jpg": [1800, 1199],
+  "ph_Tinamus.jpg": [1800, 1350],
+  "ph_Troglodytes.jpg": [1800, 1200]
 };

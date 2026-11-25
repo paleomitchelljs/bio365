@@ -469,7 +469,10 @@ Squamata
     K.plate('repro', 'Reproduction', {
       min: 4,
       head: { name: 'Reproduction', facts: 'lability' },
-      panels: [I('GriffithWagner2017_Fig2_viviparity-origins.jpg', 'Griffith & Wagner 2017', { at: 1 })],
+      panels: [
+        I('ph_Aspidoscelis.jpg', '_Aspidoscelis tigris_ · Jack Wickel · iNaturalist · CC BY-NC', { label: 'whiptail' }),
+        I('GriffithWagner2017_Fig2_viviparity-origins.jpg', 'Griffith & Wagner 2017', { at: 1 })
+      ],
       foot: [{ text: 'hemipenes' }, { text: '~115 origins of viviparity', at: 1 }, { text: 'parthenogenesis: not clones', at: 2 }],
       notes: [
         'Hemipenes: paired, one used per mating; spines and calyces, species-specific, used in taxonomy.',

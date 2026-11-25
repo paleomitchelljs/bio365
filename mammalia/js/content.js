@@ -4,7 +4,7 @@
  * On screen: clade names, anatomy, a few numbers. Everything else is in notes (S). */
 (function () {
   'use strict';
-  const K = window.Kit, I = K.img;
+  const K = window.Kit, I = K.img, M = K.sf;
   const SF = (name, by, lic) => `"${name}" by ${by} · Sketchfab · ${lic || 'CC BY 4.0'}`;
   const SHORTEN = '*red* = shortening';
 
@@ -91,7 +91,7 @@ Gnathostomata
   const segments = [
     K.cover('Mammalia', {
       sub: 'mammals',
-      pic: 'img/3D_Didelphis-opossum-skull_view1_side.jpg', cap: SF('Opossum Skull', 'RISD Nature Lab') + ' · simplified',
+      pic: 'img/ph_Didelphis.jpg', cap: '_Didelphis virginiana_, the Virginia opossum · iNaturalist · CC0',
       notes: [
         'Past runs gave mammals 6–8 lectures. This run has one: organized around the mammal toolkit, with one anatomical hero per clade.',
         'Tier 2 (L to switch) holds the cuttable blocks. If you can steal minutes from review day, spend them on reproduction: the most-asked mammal topic on past exams.'
@@ -101,7 +101,10 @@ Gnathostomata
     K.plate('trunk-hook', 'The elephant trunk', {
       min: 3,
       head: { name: 'The trunk is a face', facts: 'Sprinz 1951' },
-      panels: [I('3D_Loxodonta-forest-elephant-skull_sketchfab-preview.jpg', SF('African Forest Elephant skull', 'University of Dundee Museum Collections'))],
+      panels: [
+        I('ph_Loxodonta.jpg', '_Loxodonta cyclotis_ · pfaucher · iNaturalist · CC BY-NC', { label: 'forest elephant' }),
+        M('d982240ed37d429bbcf5953f0212cf70', SF('African Forest Elephant skull', 'University of Dundee Museum Collections'), { label: 'skull: where is the trunk?', aspect: 4 / 3 })
+      ],
       foot: [{ text: 'muscles: VII' }, { text: 'sensory: V₂', at: 1 }, { text: 'V₂ > V₁ + V₃', at: 2 }],
       notes: [
         'Motor: the trunk\'s muscles are facial (second-arch) muscles, VII. Sensory: the maxillary division of V. In the trigeminal ganglion V₂ is "larger than both [V₁ and V₃] put together".',
@@ -124,7 +127,7 @@ Gnathostomata
       min: 3,
       head: { name: 'Jaw joint and ear' },
       panels: [
-        I('3D_Thrinaxodon-cynodont_sketchfab-preview.jpg', SF('Thrinaxodon liorhinus', 'Adam Worthington'), { label: 'cynodont' }),
+        M('21c78923560f487db9eebe483bddbb14', SF('Thrinaxodon liorhinus', 'Adam Worthington'), { label: 'cynodont', aspect: 4 / 3 }),
         I('J7_bobcat_jaw.gif', '_Lynx rufus_ · OUVC 9576 · Witmer Lab · MorphoSource 000067572 + 000067597', { label: 'mammal', at: 1 })
       ],
       foot: [{ text: 'dentary–squamosal', at: 1 }, { text: 'articular + quadrate → malleus + incus', at: 2 }, { text: 'chorda tympani', at: 3 }, { text: '_Morganucodon_: both joints', at: 3 }],
@@ -155,7 +158,7 @@ Gnathostomata
     K.plate('teeth', 'Teeth', {
       min: 1.5,
       head: { name: 'Teeth' },
-      panels: [],
+      panels: [M('03d6ce75b67042d9bcdb37716135da5d', '"Mammals displaying various types of teeth" · UQ School of the Environment · Sketchfab', { label: 'heterodont teeth across mammals', aspect: 16 / 10 })],
       foot: [{ text: 'heterodont' }, { text: 'diphyodont' }, { text: 'tribosphenic', at: 1 }, { text: 'protocone → talonid', at: 1 }],
       notes: ['One replacement. The protocone grinds in the talonid basin.', '⚠ The 440 notes wrote "trigonospheric". The term is *tribosphenic*.']
     }),
@@ -240,7 +243,8 @@ Gnathostomata
       min: 4, mini: mm('Monotremata'),
       head: { name: 'A cynodont shoulder', facts: 'Gambaryan et al. 2015 · Regnault & Pierce 2018' },
       panels: [
-        I('3D_Tachyglossus-echidna_sketchfab-preview.jpg', SF('Echidna (Tachyglossus Aculeatus)', 'The University of Edinburgh Open.Ed')),
+        I('ph_Tachyglossus.jpg', '_Tachyglossus aculeatus_ · John Sear · iNaturalist · CC BY-NC', { label: 'short-beaked echidna' }),
+        M('5d6bb0834d934fcdb7c61f84640e6b44', SF('Echidna (Tachyglossus Aculeatus)', 'The University of Edinburgh Open.Ed'), { label: 'echidna skeleton', aspect: 4 / 3 }),
         I('Gambaryan2015_Fig1_Zaglossus-shoulder-girdle-CT.jpg', '_Zaglossus_ · Gambaryan et al. 2015', { at: 1 })
       ],
       foot: [{ text: 'interclavicle', at: 1 }, { text: 'coracoid + epicoracoid', at: 1 }, { text: 'pectoralis undivided', at: 2 }, { text: '~118° abduction', at: 3 }],
@@ -273,7 +277,7 @@ Gnathostomata
     K.plate('platypus', 'Monotremes', {
       min: 2, mini: mm('Monotremata'),
       head: { name: 'Monotremes' },
-      panels: [],
+      panels: [I('ph_Ornithorhynchus.jpg', '_Ornithorhynchus anatinus_ · Alex Slavenko · iNaturalist · CC BY-NC', { label: 'platypus' })],
       foot: [
         { text: 'electroreception · V' }, { text: 'venom spur', at: 1 },
         { text: 'cloaca · eggs · milk patches', at: 2 }, { text: 'epipubic bones', at: 2 },
@@ -341,8 +345,9 @@ Gnathostomata
       min: 3.5, mini: mm('Metatheria'),
       head: { name: 'Metatheria', facts: 'marsupials' },
       panels: [
-        I('3D_Didelphis-opossum-skull_sketchfab-preview.jpg', SF('Opossum Skull', 'RISD Nature Lab'), { label: '_Didelphis_: 50 teeth' }),
-        I('3D_Macropus-kangaroo-cranium_sketchfab-preview.jpg', SF('Kangaroo Cranium', 'Nick Wiggins', 'CC BY-NC-SA 4.0'), { label: 'diprotodont', at: 2 })
+        M('07cbea79fd4c4b1d84b068ae6b44a3cb', SF('Opossum Skull', 'RISD Nature Lab'), { label: '_Didelphis_: 50 teeth', aspect: 4 / 3 }),
+        M('d465b1e92af54dc6a81028935585e202', SF('Kangaroo Cranium', 'Nick Wiggins', 'CC BY-NC-SA 4.0'), { label: 'diprotodont', at: 2, aspect: 4 / 3 }),
+        I('ph_Macropus.jpg', '_Macropus giganteus_ · Shane Walker · iNaturalist · CC BY', { label: 'eastern grey kangaroos', at: 2 })
       ],
       foot: [{ text: 'inflected angular process', at: 1 }, { text: 'palatal vacuities', at: 1 }, { text: 'syndactyly', at: 3 }, { text: 'digit IV hop', at: 3 }],
       notes: [
@@ -354,7 +359,7 @@ Gnathostomata
     K.plate('wombat', 'Wombats and koalas', {
       tier: 2, min: 2, mini: mm('Metatheria'),
       head: { name: 'More marsupials' },
-      panels: [],
+      panels: [I('ph_Vombatus.jpg', '_Vombatus ursinus_ · Simon Grove · iNaturalist · CC BY-NC', { label: 'wombats' }), I('ph_Phascolarctos.jpg', '_Phascolarctos cinereus_ · KBarnes87 · iNaturalist · CC BY-NC', { label: 'koala', at: 1 })],
       foot: [{ text: 'wombat: backward pouch · cube feces' }, { text: 'koala: velar vocal folds', at: 1 }, { text: 'marsupial moles', at: 1 }, { text: 'thylacine: 1936', at: 2 }, { text: 'devil facial tumor: ~1986', at: 2 }],
       notes: [
         'Wombats: armored rump; cube-shaped feces from stiff vs. soft bands in the intestinal wall (Yang et al. 2021).',
@@ -369,7 +374,10 @@ Gnathostomata
     K.plate('xenarthra', 'Xenarthra', {
       min: 2, mini: mm('Xenarthra'),
       head: { name: 'Xenarthra', facts: 'South America' },
-      panels: [I('3D_Dasypus-armadillo_sketchfab-preview.jpg', SF('Armadillo (Dasypodidae Dasypus)', 'The University of Edinburgh Open.Ed'))],
+      panels: [
+        I('ph_Dasypus.jpg', '_Dasypus novemcinctus_ · Bruno Henrique Aranda · iNaturalist · CC BY', { label: 'nine-banded armadillo' }),
+        M('5f5c526b2df34902afe93b721f00e360', SF('Armadillo (Dasypodidae Dasypus)', 'The University of Edinburgh Open.Ed'), { label: 'skeleton under the shell', aspect: 4 / 3 })
+      ],
       foot: [{ text: 'xenarthrous vertebrae' }, { text: 'no enamel', at: 1 }, { text: 'sloths: 5–10 cervicals', at: 2 }, { text: 'identical quadruplets', at: 3 }],
       notes: [
         '"Strange-joint" lumbar vertebrae with extra articulations. Anteaters have no teeth.',
@@ -382,7 +390,10 @@ Gnathostomata
     K.plate('goldenmole', 'Golden moles', {
       min: 2.5, mini: mm('Afrotheria'),
       head: { name: 'Golden moles', facts: 'Mason 2003' },
-      panels: [I('Mason2003_Fig1_golden-mole-ossicles.jpg', 'Mason 2003')],
+      panels: [
+        I('ph_Eremitalpa.jpg', '_Eremitalpa granti_ · iNaturalist · CC0', { label: 'Grant\'s golden mole' }),
+        I('Mason2003_Fig1_golden-mole-ossicles.jpg', 'Mason 2003')
+      ],
       foot: [{ text: 'hypertrophied malleus' }, { text: 'largest ossicles of 126 species', at: 1 }, { text: 'seismic hearing', at: 2 }],
       side: true,
       notes: [
@@ -395,7 +406,10 @@ Gnathostomata
     K.plate('elephant', 'Elephants', {
       min: 2.5, mini: mm('Afrotheria'),
       head: { name: 'Elephants', facts: 'Shoshani et al. 2006' },
-      panels: [I('Shoshani2006_Fig2_elephant-brain.jpg', 'Shoshani et al. 2006')],
+      panels: [
+        I('ph_Loxodonta.jpg', '_Loxodonta cyclotis_ · pfaucher · iNaturalist · CC BY-NC'),
+        I('Shoshani2006_Fig2_elephant-brain.jpg', 'Shoshani et al. 2006')
+      ],
       foot: [{ text: '~4.8 kg brain' }, { text: 'newborn: ~50% of adult', at: 1 }, { text: '3 temporal gyri', at: 2 }, { text: 'molar conveyor', at: 3 }],
       side: true,
       notes: ['Largest brain of any land animal. Newborn brain ~50% of adult size (~25% in humans). Three temporal gyri, as in humans. Air cells over the braincase.', 'Molar conveyor: one tooth per quadrant at a time, six sets.']
@@ -404,7 +418,10 @@ Gnathostomata
     K.plate('sirenia', 'Sirenians', {
       min: 2, mini: mm('Afrotheria'),
       head: { name: 'Sirenians' },
-      panels: [I('3D_Trichechus-manatee-jaw_sketchfab-preview.jpg', SF('Manatee Jaw', 'CTL, University of Birmingham'))],
+      panels: [
+        I('ph_Trichechus.jpg', '_Trichechus manatus_ · ungerlord · iNaturalist · CC BY-NC', { label: 'West Indian manatee' }),
+        M('ea26ebf0caa34fb197be68fb0f738f00', SF('Manatee Jaw', 'CTL, University of Birmingham'), { label: 'jaw', aspect: 4 / 3 })
+      ],
       foot: [{ text: 'pachyostosis' }, { text: 'horizontal molar replacement', at: 1 }, { text: 'Steller\'s sea cow: 1768', at: 2 }],
       notes: [
         'Dense ballast bones. Manatee teeth march forward without limit.',
@@ -416,9 +433,11 @@ Gnathostomata
     K.plate('bats', 'Bats', {
       min: 3, mini: mm('Laurasiatheria'),
       head: { name: 'Bats', facts: 'Santana 2018' },
+      rows: 1,
       panels: [
+        I('ph_Pteropus.jpg', '_Pteropus medius_ · 360pixual · iNaturalist · CC BY-NC', { label: 'flying fox' }),
         I('Santana2018_Fig5_bat-jaw-muscles-on-tree.jpg', 'Santana 2018'),
-        I('3D_Chiroptera-bat-skull_sketchfab-preview.jpg', SF('Bat skull', 'University of Dundee Museum Collections', 'CC BY-NC-SA 4.0'), { at: 2 })
+        M('68d484d4b3ec4bd0bd36aa560fe8f148', SF('Bat skull', 'University of Dundee Museum Collections', 'CC BY-NC-SA 4.0'), { at: 2, aspect: 4 / 3 })
       ],
       foot: [{ text: 'temporalis: 4 parts' }, { text: 'same layout, different sizes', at: 1 }, { text: 'no automatic wrist', at: 2 }, { text: 'stylohyoid–tympanic', at: 3 }],
       notes: [
@@ -432,6 +451,7 @@ Gnathostomata
       min: 3, mini: mm('Laurasiatheria'),
       head: { name: 'Cetaceans' },
       panels: [
+        I('ph_Megaptera.jpg', '_Megaptera novaeangliae_ · Wayne and Pam Osborn · iNaturalist · CC BY-NC', { label: 'humpbacks' }),
         I('Chivers1980_Fig2_porpoise-stomach.jpg', 'Porpoise · Chivers & Hladik 1980', { label: 'compound stomach' }),
         I('Meshida2022_Fig1_whale-orbit-EOMs.jpg', 'Meshida et al. 2022', { label: 'palpebral bellies', at: 1 })
       ],
@@ -447,7 +467,8 @@ Gnathostomata
       min: 2, mini: mm('Laurasiatheria'),
       head: { name: 'Pangolins' },
       panels: [
-        I('3D_Manis-pangolin-skeleton_sketchfab-preview.jpg', SF('African White-bellied Pangolin Skeleton', 'Holliday Lab', 'CC BY-NC 4.0')),
+        I('ph_Smutsia.jpg', '_Smutsia temminckii_ · Bart Wursten · iNaturalist · CC BY-NC', { label: 'ground pangolin' }),
+        M('2edecaaa1c7f4b27aed5647e351f1fa7', SF('African White-bellied Pangolin Skeleton', 'Holliday Lab', 'CC BY-NC 4.0'), { label: 'skeleton', aspect: 4 / 3 }),
         I('Chivers1980_Fig1_faunivore-guts-pangolin.jpg', 'Chivers & Hladik 1980', { at: 2 })
       ],
       foot: [{ text: 'keratin scales' }, { text: 'sternoglossus to the pelvis', at: 1 }, { text: 'gizzard-like stomach', at: 2 }],
@@ -457,7 +478,7 @@ Gnathostomata
     K.plate('laura-rest', 'Other laurasiatherians', {
       tier: 2, min: 1.5, mini: mm('Laurasiatheria'),
       head: { name: 'Laurasiatheria' },
-      panels: [],
+      panels: [I('ph_Condylura.jpg', '_Condylura cristata_ · ginebigkwe · iNaturalist · CC BY-NC', { label: 'star-nosed mole' })],
       foot: [{ text: 'ruminant foregut · perissodactyl hindgut' }, { text: 'carnassials P⁴/M₁', at: 1 }, { text: 'star-nosed mole', at: 2 }],
       notes: ['Star-nosed mole: 22 rays; "sniffs" bubbles underwater. ⚠ Not the "only amniote that smells underwater": water shrews do it too (Catania 2006).']
     }),
@@ -465,7 +486,10 @@ Gnathostomata
     K.plate('glires', 'Euarchontoglires', {
       min: 3, mini: mm('Euarchontoglires'),
       head: { name: 'Euarchontoglires' },
-      panels: [I('3D_Hydrochoerus-capybara-skull_sketchfab-preview.jpg', SF('Capybara - skull of the largest living rodent', 'WitmerLab at Ohio University'))],
+      panels: [
+        I('ph_Hydrochoerus.jpg', '_Hydrochoerus hydrochaeris_ · avocat · iNaturalist · CC BY', { label: 'capybara' }),
+        M('77a788c945864ec39dca84a1f56601e4', SF('Capybara - skull of the largest living rodent', 'WitmerLab at Ohio University'), { label: 'capybara skull', aspect: 4 / 3 })
+      ],
       foot: [
         { text: 'ever-growing incisors' }, { text: 'enamel in front only' },
         { text: 'lagomorph peg tooth', at: 1 }, { text: 'masseter layouts', at: 1 },

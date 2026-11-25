@@ -273,7 +273,7 @@ Diapsida
     K.plate('life', 'Life history', {
       min: 2,
       head: { name: 'Sex and age' },
-      panels: [I('ph_Aldabrachelys.jpg', '_Aldabrachelys gigantea_ · Rafi Amar · iNaturalist · CC BY-NC', { label: 'giant tortoise', at: 2 })],
+      panels: [I('ph_Aldabrachelys.jpg', '_Aldabrachelys gigantea_ · Rafi Amar · iNaturalist · CC BY-NC', { label: 'giant tortoise' })],
       foot: [{ text: 'single phallus' }, { text: 'TSD: turtles · crocodylians · tuatara', at: 1 }, { text: 'slow senescence', at: 2 }, { text: 'Jonathan: 190+ years', at: 2 }],
       notes: [
         'A single, very large phallus stored in the cloaca; the shell keeps the cloacae apart.',

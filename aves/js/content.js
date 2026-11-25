@@ -2,7 +2,7 @@
  * On screen: clade names, anatomy, a few numbers. Everything else is in notes (S). */
 (function () {
   'use strict';
-  const K = window.Kit, I = K.img;
+  const K = window.Kit, I = K.img, M = K.sf;
   const SF = (name, by, lic) => `"${name}" by ${by} · Sketchfab · ${lic || 'CC BY 4.0'}`;
   const SHORTEN = '*red* = shortening';
 
@@ -82,7 +82,7 @@ Aves
   const segments = [
     K.cover('Aves', {
       sub: 'birds',
-      pic: 'img/3D_MS_Struthio-ostrich-skull-OUVC10636_view1_side.jpg', cap: '_Struthio camelus_ · OUVC 10636 · Witmer Lab · MorphoSource 000542253',
+      pic: 'img/ph_Struthio.jpg', cap: '_Struthio camelus_, the ostrich · Andrew Allen · iNaturalist · CC BY',
       notes: [
         'Birds are theropod dinosaurs, so start from what was *already there*: feathers, air sacs and pneumatic bones, one-way lung airflow (seen in crocodylians, L2), the furcula, bipedal hindlimbs, brooding. Then what flight remodeled.',
         'Thesis: "Most of what makes a bird a bird evolved before birds."',
@@ -94,7 +94,7 @@ Aves
       min: 3,
       head: { name: 'Moa', facts: 'Huynen et al. 2014' },
       panels: [
-        I('3D_Dinornis-giant-moa_sketchfab-preview.jpg', SF('Giant Moa (Dinornis robustus)', 'Museo [UV] Historia Natural')),
+        M('66cc3c69552346a289698511ad5c7386', SF('Moa nunui / South Island giant moa skeleton', 'Auckland Museum', 'CC BY-SA 4.0'), { label: '_Dinornis_: no wing bones', aspect: 4 / 3 }),
         I('Huynen2014_Fig1_moa-wing-and-tbx5-network.jpg', 'Huynen et al. 2014', { at: 1 }),
         I('Huynen2014_Fig4_moa-tbx5-chick-hindlimb.jpg', 'Huynen et al. 2014', { at: 2 })
       ],
@@ -195,6 +195,7 @@ Aves
       min: 4,
       head: { name: 'Shoulder and keel', facts: 'Suzuki et al. 2014' },
       panels: [
+        I('ph_Tinamus.jpg', '_Tinamus major_ · pkondrashov · iNaturalist · CC BY-NC', { label: 'great tinamou' }),
         I('Suzuki2014_Fig4_tinamou-sternum-keel.jpg', 'Tinamou · Suzuki et al. 2014'),
         I('Suzuki2014_Fig1_tinamou-scapula-coracoid.jpg', 'Tinamou · Suzuki et al. 2014', { at: 1 })
       ],
@@ -210,7 +211,7 @@ Aves
     K.plate('hand', 'Hand', {
       min: 2,
       head: { name: 'Hand' },
-      panels: [I('3D_Tinamus-great-tinamou_sketchfab-preview.jpg', SF('Great Tinamou - Tinamus major', 'MooreLab'))],
+      panels: [M('3215f6a2a0a14624838f4a23b41f081c', '"Common Gull Wing Skeleton" · Blackburn Lab · Sketchfab', { label: 'gull wing, bones colored', aspect: 16 / 9 })],
       foot: [{ text: 'carpometacarpus' }, { text: 'alula + 2 digits', at: 1 }, { text: 'II–III–IV or I–II–III?', at: 2 }, { text: 'frame shift', at: 3 }],
       notes: [
         'Embryos form digits in positions II–III–IV, but they look like I–II–III. A frame shift is the leading explanation, which matters for the theropod link (Tamura et al. 2011, via Suzuki et al. 2014).',
@@ -320,7 +321,10 @@ Aves
     K.plate('humming', 'Hummingbird tongue', {
       min: 2,
       head: { name: 'Hummingbird tongue' },
-      panels: [I('3D_Archilochus-ruby-throated-hummingbird_sketchfab-preview.jpg', SF('Ruby-throated Hummingbird, WY Game and Fish', 'University of Wyoming Libraries'))],
+      panels: [
+        I('ph_Archilochus.jpg', '_Archilochus colubris_ · Kent Ross · iNaturalist · CC BY-NC', { label: 'ruby-throated hummingbird' }),
+        M('1a4de3fbce9c4dcbbe595abcb9afd49f', SF('Ruby-throated Hummingbird, WY Game and Fish', 'University of Wyoming Libraries'), { label: 'specimen scan', aspect: 4 / 3 })
+      ],
       foot: [{ text: 'lamellae unfurl' }, { text: 'elastic micropump', at: 1 }],
       notes: ['⚠ Not "a passive capillary trap". The forked tip\'s lamellae unfurl in nectar and trap it by changing shape (Rico-Guevara & Rubega 2011). Later: an elastic micropump (Rico-Guevara et al. 2015).']
     }),
@@ -330,7 +334,7 @@ Aves
       head: { name: 'The upper bill moves' },
       panels: [
         I('J6_ostrich_cranial_kinesis.gif', '_Struthio camelus_ · OUVC 10636 · Witmer Lab · MorphoSource 000542253'),
-        I('3D_Anas-mallard-skull-joints_sketchfab-preview.jpg', SF('Mallard duck skull joints', 'Holliday Lab'), { at: 1 })
+        M('ea49d0dd500647cbb4b61ad5ca9e659a', SF('Mallard duck skull joints', 'Holliday Lab'), { label: 'mallard skull joints', at: 1, aspect: 4 / 3 })
       ],
       legend: SHORTEN,
       notes: ['Cranial kinesis: the upper bill rotates on a flexible zone as the quadrate swings.']
@@ -339,7 +343,7 @@ Aves
     K.plate('gut', 'Gut', {
       min: 2,
       head: { name: 'Gut' },
-      panels: [],
+      panels: [I('ph_Columba.jpg', '_Columba livia_ · Drew T Henderson · iNaturalist · CC BY-NC', { label: 'pigeon: crop milk' })],
       foot: [{ text: 'crop' }, { text: 'proventriculus + gizzard', at: 1 }, { text: 'croc two-sac stomach', at: 2 }, { text: 'crop milk · prolactin', at: 3 }],
       notes: [
         'Crop: an esophageal pouch. Proventriculus glandular; gizzard muscular, with grit.',
@@ -354,7 +358,10 @@ Aves
     K.plate('syrinx', 'Syrinx', {
       min: 3,
       head: { name: 'Syrinx' },
-      panels: [],
+      panels: [
+        I('ph_Troglodytes.jpg', '_Troglodytes aedon_ · Greg Lasley · iNaturalist · CC BY-NC', { label: 'house wren: an oscine' }),
+        I('ph_Steatornis.jpg', '_Steatornis caripensis_ · Aitor · iNaturalist · CC BY', { label: 'oilbird', at: 3 })
+      ],
       foot: [{ text: 'tracheobronchial junction' }, { text: 'two notes at once', at: 1 }, { text: 'oscines: many syringeal muscles', at: 2 }, { text: 'echolocation: oilbird · swiftlets', at: 3 }],
       notes: ['Paired sound sources. Suboscines have few intrinsic syringeal muscles.', '⚠ The oilbird is *not* the only echolocating bird: swiftlets (_Aerodramus_) click in caves too.']
     }),
@@ -362,7 +369,10 @@ Aves
     K.plate('brain', 'Brain', {
       min: 3,
       head: { name: 'Bird brains' },
-      panels: [],
+      panels: [
+        M('f57a647b00654e4cb12392174c804666', SF('Red-winged Blackbird – brain endocast & skull', 'WitmerLab at Ohio University'), { label: 'blackbird brain in its skull', aspect: 4 / 3 }),
+        I('ph_Corvus-moneduloides.jpg', '_Corvus moneduloides_ · Donald Davesne · iNaturalist · CC BY', { label: 'New Caledonian crow', at: 3 })
+      ],
       foot: [{ text: 'pallium' }, { text: 'nidopallium caudolaterale', at: 1 }, { text: 'nuclei, not layers', at: 2 }, { text: 'more neurons per gram', at: 3 }],
       notes: [
         '⚠ The 440 framing said bird intelligence routes "through the thalamus, not the cerebrum". The integrative work is in the pallium, especially the nidopallium caudolaterale (functionally like prefrontal cortex).',
@@ -375,7 +385,10 @@ Aves
     K.plate('repro', 'Reproduction', {
       min: 4,
       head: { name: 'Reproduction' },
-      panels: [],
+      panels: [
+        I('ph_Apteryx.jpg', '_Apteryx australis_ · Genevieve Early · iNaturalist · CC BY', { label: 'kiwi', at: 3 }),
+        I('ph_Anas.jpg', '_Anas platyrhynchos_ · Kyle Tansley · iNaturalist · CC BY-NC', { label: 'precocial ducklings' })
+      ],
       foot: [{ text: 'left ovary only' }, { text: 'phallus: palaeognaths · ducks · cracids', at: 1 }, { text: 'chicken: _Bmp4_ removes it', at: 2 }, { text: 'kiwi egg ~20% of mass', at: 3 }],
       notes: [
         'The right ovary and oviduct regress in development.',

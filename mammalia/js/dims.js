@@ -1,16 +1,5 @@
 /* Written by tools/assets.py: [width, height] of each picture in img/. */
 window.DIMS = {
-  "3D_Chiroptera-bat-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Dasypus-armadillo_sketchfab-preview.jpg": [1024, 576],
-  "3D_Didelphis-opossum-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Didelphis-opossum-skull_view1_side.jpg": [708, 338],
-  "3D_Hydrochoerus-capybara-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Loxodonta-forest-elephant-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Macropus-kangaroo-cranium_sketchfab-preview.jpg": [1024, 576],
-  "3D_Manis-pangolin-skeleton_sketchfab-preview.jpg": [1024, 576],
-  "3D_Tachyglossus-echidna_sketchfab-preview.jpg": [1024, 576],
-  "3D_Thrinaxodon-cynodont_sketchfab-preview.jpg": [1024, 576],
-  "3D_Trichechus-manatee-jaw_sketchfab-preview.jpg": [1024, 576],
   "BishopPierce2024_Fig1_synapsid-hindlimb-models.jpg": [1283, 1327],
   "Chivers1980_Fig1_faunivore-guts-pangolin.jpg": [1215, 1800],
   "Chivers1980_Fig2_porpoise-stomach.jpg": [1075, 1019],
@@ -32,5 +21,20 @@ window.DIMS = {
   "Meshida2022_Fig1_whale-orbit-EOMs.jpg": [1572, 1110],
   "ReillyWhite2003_Fig1_epipubic-cross-couplet.jpg": [690, 642],
   "Santana2018_Fig5_bat-jaw-muscles-on-tree.jpg": [1377, 958],
-  "Shoshani2006_Fig2_elephant-brain.jpg": [1044, 1055]
+  "Shoshani2006_Fig2_elephant-brain.jpg": [1044, 1055],
+  "ph_Condylura.jpg": [1800, 1350],
+  "ph_Dasypus.jpg": [1800, 1199],
+  "ph_Didelphis.jpg": [1800, 1350],
+  "ph_Eremitalpa.jpg": [1800, 1350],
+  "ph_Hydrochoerus.jpg": [1800, 1200],
+  "ph_Loxodonta.jpg": [1800, 1204],
+  "ph_Macropus.jpg": [1800, 1196],
+  "ph_Megaptera.jpg": [1800, 1217],
+  "ph_Ornithorhynchus.jpg": [1800, 1201],
+  "ph_Phascolarctos.jpg": [1800, 1199],
+  "ph_Pteropus.jpg": [1800, 1055],
+  "ph_Smutsia.jpg": [1800, 1215],
+  "ph_Tachyglossus.jpg": [1800, 1408],
+  "ph_Trichechus.jpg": [1800, 1350],
+  "ph_Vombatus.jpg": [1800, 1350]
 };
