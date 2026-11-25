@@ -50,7 +50,8 @@ Other keys: → / space next, ← back, `[` `]` previous/next slide, **L** level
   goes, and needs the network. Clicking a model gives it the keyboard; moving the pointer
   back onto the slide hands the keys back to the deck.
 - Plates lay their pictures out themselves: one row, two rows, or a 3D model full height
-  with photos stacked beside it, whichever shows the most. `rows: 1` forces one row.
+  with photos stacked beside it, whichever shows the most. `rows: 1` forces one row;
+  `rows: [2, 2]` forces that split (two rows of two).
   A panel with `swap: [{src, at}]` changes picture at those builds (the turtle breathing
   stills, drawn by `python3 tools/draw_turtle_breathing.py`).
 

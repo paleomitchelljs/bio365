@@ -121,6 +121,7 @@
       if (hd.topic) D.el('div', 'pl2-topic' + (hd.name ? '' : ' solo'), h, `<span>${D.fmt(hd.topic)}</span>`);
       top = 96;
     }
+    let chipW = 0;
     if (def.foot && def.foot.length) {
       const f = foot = D.el('div', 'pl2-foot', root);
       def.foot.forEach((c) => {
@@ -128,7 +129,7 @@
         timed.push({ e, at: c.at || 0 });
       });
       /* chips wrap: guess how many rows of them there are from their length */
-      const chipW = def.foot.reduce((t, c) => t + String(c.text).replace(/[_*]/g, '').length * 14 + 70, 0);
+      chipW = def.foot.reduce((t, c) => t + String(c.text).replace(/[_*]/g, '').length * 14 + 70, 0);
       if (def.side) { f.classList.add('side'); right = 1070; } else bottom = H - 84 * Math.ceil(chipW / 1480);
     }
     if (def.key) {
@@ -144,11 +145,15 @@
       const tallW = Math.max(Math.round(tallH * (t.w * (c[2] - c[0])) / (t.h * (c[3] - c[1]))), t.label ? Math.ceil(labW(t)) : 0);
       right -= tallW + GAP;
       els = D.plateRow(root, [t], [right + GAP, top + 8, tallW, free], 'row', { lab: 60 });
-      if (foot) foot.style.right = (1600 - right) + 'px';
+      if (foot) {
+        foot.style.right = (1600 - right) + 'px';
+        // the chips now share the width left of the column, so they wrap sooner
+        if (!def.side) bottom = H - 84 * Math.ceil(chipW / (right - 120));
+      }
     }
     els = els.concat(def.between || def.rows === 1
       ? D.plateRow(root, def.panels, [40, top + 8, right - 40, bottom - top - 8], 'row', { gap: def.between ? MIDGAP : 0 })
-      : rows(root, def.panels, [40, top + 8, right - 40, bottom - top - 8]));
+      : rows(root, def.panels, [40, top + 8, right - 40, bottom - top - 8], Array.isArray(def.rows) ? def.rows : null));
     if (def.between) {
       const a = els[0], b = els[1], m = def.between;
       const card = D.el('div', 'pl2-lab big pl2-x pl2-mid' + (m.role ? ' r-' + m.role : ''), root, ROLE(m.role) + `<span>${D.fmt(m.text)}</span>`);
@@ -173,13 +178,14 @@
   /* Three or four small pictures in one row leave the slide half empty. Lay the panels
    * out as one row and as every two-row split (order kept), and keep the layout that
    * shows the most picture (see the score below). */
-  function rows(root, panels, box) {
-    const tries = [[panels]];
-    for (let k = 1; k < panels.length; k++) tries.push([panels.slice(0, k), panels.slice(k)]);
+  function rows(root, panels, box, force) {
+    /* force [2, 2]: exactly these rows, no search */
+    const tries = force ? [force.map((n, r) => panels.slice(force.slice(0, r).reduce((a, b) => a + b, 0)).slice(0, n))] : [[panels]];
+    if (!force) for (let k = 1; k < panels.length; k++) tries.push([panels.slice(0, k), panels.slice(k)]);
     /* and, from three panels up, one panel full height on the left (the 3D model if there is
      * one, else the first) with the rest stacked in a column beside it */
     const big = panels.find((p) => p.embed) || panels[0];
-    if (panels.length >= 3) [0.5, 0.6, 0.7].forEach((f) => tries.push({ big, col: panels.filter((p) => p !== big), f }));
+    if (!force && panels.length >= 3) [0.5, 0.6, 0.7].forEach((f) => tries.push({ big, col: panels.filter((p) => p !== big), f }));
     let best = null;
     tries.forEach((t) => {
       const layer = D.el('div', 'pl2', root);
@@ -190,13 +196,15 @@
         out = D.plateRow(layer, [t.big], [box[0], box[1], lw - GAP / 2, box[3]], 'row')
           .concat(D.plateRow(layer, t.col, [box[0] + lw + GAP / 2, box[1], box[2] - lw - GAP / 2, box[3]], 'col'));
       } else {
-        const hh = t.length === 1 ? box[3] : (box[3] - GAP) / 2;
+        const hh = (box[3] - GAP * (t.length - 1)) / t.length;
         flat = [].concat(...t);
         out = [].concat(...t.map((row, r) => D.plateRow(layer, row, [box[0], box[1] + r * (hh + GAP), box[2], hh], 'row')));
       }
       /* score: each picture's linear size (so one big and one stamp loses to two fair-sized),
-       * a 3D model counting extra because it is no use small, and a nudge toward one row */
-      const area = out.reduce((a, o, i) => a + Math.sqrt(o.iw * o.h) * (flat[i].embed ? 1.5 : 1), 0) * (t.length === 1 ? 1.05 : 1);
+       * a 3D model counting extra because it is no use small (and next to nothing when it is
+       * a stamp, too small to turn), and a nudge toward one row */
+      const w3d = (o) => (o.h < 160 ? 0.2 : 1.5);
+      const area = out.reduce((a, o, i) => a + Math.sqrt(o.iw * o.h) * (flat[i].embed ? w3d(o) : 1), 0) * (t.length === 1 ? 1.05 : 1);
       if (!best || area > best.area) { if (best) best.layer.remove(); best = { layer, out, area }; } else layer.remove();
     });
     return best.out;

@@ -2,7 +2,7 @@
  * On screen: clade names, anatomy, a few numbers. Everything else is in notes (S). */
 (function () {
   'use strict';
-  const K = window.Kit, I = K.img;
+  const K = window.Kit, I = K.img, M = K.sf;
   const SF = (name, by, lic) => `"${name}" by ${by} · Sketchfab · ${lic || 'CC BY 4.0'}`;
   const SHORTEN = '*red* = shortening';
 
@@ -67,7 +67,7 @@ Diapsida
   const segments = [
     K.cover('Diapsida', {
       sub: 'turtles · crocodylians · tuatara',
-      pic: 'img/3D_MS_Sphenodon-skull-UF11978_view1_side.jpg', cap: '_Sphenodon punctatus_ · UF Herp 11978 · oVert · MorphoSource 000011003',
+      pic: 'img/ph_Sphenodon.jpg', cap: '_Sphenodon punctatus_, the tuatara · wild_wind · iNaturalist · CC BY',
       notes: [
         'Three lineages, each a small living diversity, each the survivor of a big Mesozoic radiation, each with one radically odd system:',
         'turtles: the *trunk* (shell, breathing); crocodylians: the *heart and lungs*; _Sphenodon_: the *skull and teeth*.',
@@ -128,8 +128,8 @@ Diapsida
       min: 5, mini: turtle('Testudines'),
       head: { name: 'A ribcage turned inside out' },
       panels: [
-        I('3D_Trachemys-pond-slider-shell_sketchfab-preview.jpg', SF('Pond Slider Shell', 'RISD Nature Lab')),
-        I('3D_MS_Chelydra-full-body-OUVC10681_view1_side.jpg', '_Chelydra serpentina_ · OUVC 10681 · Witmer Lab · MorphoSource 000076036', { at: 2 })
+        M('0b0d55197757487f80176ff8a312d537', SF('Esqueleto Trachemys scripta elegans', 'Museo [UV] Historia Natural'), { label: '_Trachemys_ skeleton', aspect: 16 / 10 }),
+        M('064bb3110a5d4eae83419eeb7a3a311d', '_Chelydra serpentina_ MSB:Herp:73436 · Biodiversity · Sketchfab', { label: '_Chelydra_: bones colored', at: 2, aspect: 16 / 10 })
       ],
       foot: [
         { text: 'carapace: dorsal ribs + neural plates' },
@@ -150,7 +150,10 @@ Diapsida
     K.plate('zhu', 'Shell reduction', {
       min: 2.5, mini: turtle('Americhelydia'),
       head: { name: 'Shell reduction', facts: 'Zhu 2011' },
-      panels: [I('Zhu2011_Fig1_Chelydra-vs-Trachemys-plastron.jpg', '_Chelydra_ vs. _Trachemys_ · Zhu 2011')],
+      panels: [
+        I('ph_Chelydra.jpg', '_Chelydra serpentina_ · Joey Santore · iNaturalist · CC BY', { label: 'snapper on land' }),
+        I('Zhu2011_Fig1_Chelydra-vs-Trachemys-plastron.jpg', '_Chelydra_ vs. _Trachemys_ · Zhu 2011')
+      ],
       foot: [{ text: 'cruciform plastron' }, { text: 'bigger ventral girdle muscles', at: 1 }, { text: 'pectoralis splits', at: 2 }, { text: 'more parasagittal', at: 2 }],
       notes: [
         'Shell reduction is reversible. The snapper\'s cruciform plastron frees room for adductors, ambiens, pubotibialis, puboischiofemoralis, and a more parasagittal stance.',
@@ -209,7 +212,10 @@ Diapsida
     K.plate('accessory', 'Softshells', {
       tier: 2, min: 1.5, mini: turtle('Trionychia'),
       head: { name: 'Breathing and peeing, oddly' },
-      panels: [I('3D_Apalone-softshell_sketchfab-preview.jpg', SF('Florida Softshell Turtle', 'Environmental Archaeology Program'))],
+      panels: [
+        I('ph_Apalone.jpg', '_Apalone spinifera_ · salamanderdance · iNaturalist · CC BY-NC', { label: 'snorkel nose' }),
+        M('da950fecaa77479984c0bb2e37aa9a7d', '_Apalone spinifera_ · Michigan Herpetology (UMMZ) · Sketchfab', { label: 'soft shell, bony disc', aspect: 16 / 10 })
+      ],
       foot: [{ text: 'cloacal bursae' }, { text: '_Rheodytes_', at: 1 }, { text: 'urea out the mouth', at: 2 }],
       notes: [
         'Aquatic turtles exchange gas across vascular cloacal bursae. _Rheodytes_ (Fitzroy River turtle) gets a large share of its O₂ this way.',
@@ -223,7 +229,8 @@ Diapsida
       head: { name: 'Hiding the head', facts: 'Werneburg & Maier 2019' },
       panels: [
         I('D02_turtle_neck_retraction.gif', 'Schematic after Werneburg & Maier 2019'),
-        I('WerneburgMaier2019_Fig2_akinesis-on-turtle-tree.jpg', 'Werneburg & Maier 2019', { at: 1 })
+        I('WerneburgMaier2019_Fig2_akinesis-on-turtle-tree.jpg', 'Werneburg & Maier 2019', { at: 1 }),
+        I('ph_Chelodina.jpg', '_Chelodina_ · Dominic Williams · iNaturalist · CC BY', { label: 'pleurodire: neck to the side', at: 2 })
       ],
       foot: [
         { text: 'wall: epipterygoid (cryptodires) · parietal flange (pleurodires)', at: 2 },
@@ -241,6 +248,7 @@ Diapsida
       min: 3, mini: turtle('Pleurodira'),
       head: { name: '_Chelus_', facts: 'matamata · Lemell et al. 2002' },
       panels: [
+        I('ph_Chelus.jpg', '_Chelus fimbriata_ · Maël Dewynter · iNaturalist · CC BY-NC', { label: 'matamata' }),
         I('D03_matamata_suction.gif', 'Schematic after Lemell et al. 2002'),
         I('Lemell2002_Fig5_matamata-strike-sequence.jpg', 'Lemell et al. 2002', { at: 1 })
       ],
@@ -265,7 +273,7 @@ Diapsida
     K.plate('life', 'Life history', {
       min: 2,
       head: { name: 'Sex and age' },
-      panels: [],
+      panels: [I('ph_Aldabrachelys.jpg', '_Aldabrachelys gigantea_ · Rafi Amar · iNaturalist · CC BY-NC', { label: 'giant tortoise', at: 2 })],
       foot: [{ text: 'single phallus' }, { text: 'TSD: turtles · crocodylians · tuatara', at: 1 }, { text: 'slow senescence', at: 2 }, { text: 'Jonathan: 190+ years', at: 2 }],
       notes: [
         'A single, very large phallus stored in the cloaca; the shell keeps the cloacae apart.',
@@ -278,7 +286,10 @@ Diapsida
     K.plate('leatherback', 'Leatherback', {
       tier: 2, min: 1, mini: turtle('Americhelydia'),
       head: { name: 'Leatherback', facts: '_Dermochelys_' },
-      panels: [],
+      panels: [
+        I('ph_Dermochelys.jpg', '_Dermochelys coriacea_ · azure27014 · iNaturalist · CC BY-NC'),
+        M('4974c93644a24da280fde68cba74a12d', SF('Model 95A - Adult Leatherback Sea Turtle', 'DigitalLife3D', 'CC BY-NC 4.0'), { aspect: 16 / 10 })
+      ],
       foot: [{ text: 'gigantothermy' }, { text: 'countercurrent retia' }, { text: 'insulating fat' }, { text: 'carapace of ossicles' }],
       notes: ['Countercurrent retia in the flippers; a carapace reduced to a mosaic of ossicles in leathery skin.']
     }),
@@ -296,14 +307,25 @@ Diapsida
     }),
 
     K.plate('croc-id', 'Snouts', {
-      min: 2,
+      min: 1,
       head: { name: 'Snouts' },
       panels: [
-        I('3D_Alligator-skull_sketchfab-preview.jpg', SF('Alligator Skull', 'Eric Bauer'), { label: '_Alligator_' }),
-        I('3D_Gavialis-gharial-skull_sketchfab-preview.jpg', SF('Gharial Skull (NHMW-ZOO-HS-40.835)', 'Natural History Museum Vienna', 'CC BY-NC 4.0'), { label: '_Gavialis_', at: 1 })
+        M('47e21ba8ab594048a5e6174938a46665', SF('Alligator Skull', 'RISD Nature Lab'), { label: '_Alligator_', aspect: 16 / 10 }),
+        M('607ff43ac31a44a1b3d474965631f7d9', SF('Gharial Skull (NHMW-ZOO-HS-40.835)', 'Natural History Museum Vienna', 'CC BY-NC 4.0'), { label: '_Gavialis_', at: 1, aspect: 16 / 10 })
       ],
-      foot: [{ text: '4th dentary tooth', at: 2 }, { text: 'narrow snout → more fish', at: 3 }],
-      notes: ['Alligators hide the lower teeth when the mouth is shut (the broad snout overlaps them). Crocodiles show the 4th dentary tooth.', 'Narrower snouts eat more fish.']
+      foot: [{ text: 'broad snout' }, { text: 'narrow snout → more fish', at: 1 }],
+      notes: ['Narrower snouts eat more fish. The gharial is the extreme; _Tomistoma_ is close behind.']
+    }),
+
+    K.plate('croc-teeth', 'Alligator or crocodile?', {
+      min: 1,
+      head: { name: 'Alligator or crocodile?' },
+      panels: [
+        I('ph_Alligator.jpg', '_Alligator mississippiensis_ · Josiah Smith · iNaturalist · CC BY-NC', { label: '_Alligator_: lower teeth hidden' }),
+        I('ph_Crocodylus-niloticus.jpg', '_Crocodylus niloticus_ · Josef Stulz · iNaturalist · CC BY-NC', { label: '_Crocodylus_: 4th tooth shows', at: 1 })
+      ],
+      foot: [{ text: '4th dentary tooth', at: 1 }],
+      notes: ['Alligators hide the lower teeth when the mouth is shut: the broad upper jaw overlaps them. Crocodiles show the 4th dentary tooth, which sits in a notch on the side of the snout.']
     }),
 
     K.plate('heart', 'Heart', {
@@ -337,7 +359,7 @@ Diapsida
       head: { name: 'Breathing', facts: 'crocodylians' },
       panels: [
         I('D04_croc_hepatic_piston.gif', 'Schematic after Farmer & Carrier 2000', { label: 'diaphragmaticus' }),
-        I('3D_Alligator-skull_sketchfab-preview.jpg', SF('Alligator Skull', 'Eric Bauer'), { label: 'secondary palate', at: 2 })
+        M('3c393dba840b4c03b7ce1da205a08df3', SF('Alligator Skull', 'Eric Bauer'), { label: 'secondary palate: turn it over', at: 2, aspect: 16 / 10 })
       ],
       foot: [{ text: 'pubis + gastralia → liver', at: 1 }, { text: 'gular valve', at: 2 }, { text: 'one-way airflow', at: 3 }],
       legend: SHORTEN,
@@ -369,7 +391,7 @@ Diapsida
       head: { name: 'Jaw', facts: 'the retroarticular lever' },
       panels: [
         I('J5_alligator_jaw.gif', '_Alligator mississippiensis_ · OUVC 10389 · Witmer Lab · MorphoSource 000542268'),
-        I('3D_Crocodylus-moreletii-jaw-muscles_sketchfab-preview.jpg', SF('3D Jaw muscles of Crocodylus moreletii', 'Holliday Lab'), { at: 1 })
+        M('3d87992f50434bfb8d762bd2a3d41994', SF('3D Jaw muscles of Crocodylus moreletii', 'Holliday Lab'), { label: 'adductors', at: 1 })
       ],
       legend: SHORTEN,
       notes: ['Depressor mandibulae pulls up on the retroarticular process behind the joint; the adductors close.']
@@ -413,7 +435,7 @@ Diapsida
     K.plate('iso', 'ISOs', {
       tier: 2, min: 1,
       head: { name: 'Integumentary sensory organs' },
-      panels: [],
+      panels: [I('ph_Crocodylus-acutus.jpg', '_Crocodylus acutus_ · jimdaniels · iNaturalist · CC BY-NC', { label: 'ISOs: the dots on the jaws' })],
       foot: [{ text: 'dome pressure receptors' }, { text: 'V' }, { text: 'gentler than a fingertip', at: 1 }],
       notes: ['On the jaws (all over the body in crocodylids), innervated by V. More sensitive than a fingertip, which is how a croc carries hatchlings in its mouth (Leitch & Catania 2012).']
     }),
@@ -424,7 +446,10 @@ Diapsida
     K.plate('tuatara', 'Tuatara', {
       min: 2,
       head: { name: '_Sphenodon punctatus_', facts: 'tuatara' },
-      panels: [I('3D_MS_Sphenodon-whole-body-UF14110_view1_side.jpg', '_Sphenodon punctatus_ · UF Herp 14110 · oVert · MorphoSource 000011010')],
+      panels: [
+        I('ph_Sphenodon-body.jpg', '_Sphenodon punctatus_ · Emma Rowell · iNaturalist · CC BY-NC'),
+        M('13e036e489d34dae94a08ea16d7b6fe8', SF('Tuatara (NHMW-ZOO-HS-32311)', 'Natural History Museum Vienna', 'CC BY-NC 4.0'), { at: 1, aspect: 16 / 10 })
+      ],
       foot: [{ text: '1 species' }, { text: 'Rhynchocephalia', at: 1 }, { text: 'New Zealand islands', at: 1 }, { text: 'active at 5–12 °C', at: 2 }],
       notes: [
         'One species. "_S. guntheri_" was sunk in 2010 on genetic data (Hay et al. 2010). ⚠ The 440 notes list two.',
@@ -437,7 +462,7 @@ Diapsida
       min: 3,
       head: { name: 'The "perfect diapsid"' },
       panels: [
-        I('3D_MS_Sphenodon-skull-UF11978_view1_side.jpg', '_Sphenodon punctatus_ · UF Herp 11978 · oVert · MorphoSource 000011003'),
+        M('2d4a344ba82546b0973a8e51894c172a', '"Tuatara Skull Anatomy" · Blackburn Lab · Sketchfab', { label: 'bones colored', aspect: 16 / 10 }),
         I('WerneburgPreuschoft2024_Fig1_Sphenodon-Chelydra-temporal-terms.jpg', 'Werneburg & Preuschoft 2024', { at: 1 })
       ],
       foot: [{ text: 'lower temporal bar: re-evolved', at: 1 }, { text: 'parietal eye', at: 2 }, { text: 'no tympanum', at: 2 }],
@@ -487,7 +512,7 @@ Diapsida
     K.plate('sph-repro', 'No hemipenes', {
       min: 1,
       head: { name: '_Sphenodon_ trunk' },
-      panels: [],
+      panels: [M('d4c51970dac94f39bceb47916b73c717', '_Sphenodon punctatus_ UF 14110 · Blackburn Lab · Sketchfab', { label: 'ribs, uncinates, gastralia', aspect: 16 / 9 })],
       foot: [{ text: 'uncinate processes' }, { text: 'no hemipenes', at: 1 }, { text: 'hemipenes: a squamate novelty', at: 2 }],
       notes: ['Lyson Fig 2: the _Sphenodon_ hypaxials are the comparison set for the turtle breathing muscles.']
     }),
