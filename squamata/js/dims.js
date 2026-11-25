@@ -1,13 +1,5 @@
 /* Written by tools/assets.py: [width, height] of each picture in img/. */
 window.DIMS = {
-  "3D_Chamaeleo-calyptratus-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Crotalus-rattlesnake-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_MS_Gekko-smithii-CAS9595_view1_side.jpg": [613, 315],
-  "3D_MS_Naja-nigricollis-UMMZ203814_view1_side.jpg": [691, 218],
-  "3D_Python-regius-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Varanus-beccarii-skull_sketchfab-preview.jpg": [1024, 576],
-  "3D_Varanus-komodoensis-UF28219_sketchfab-preview.jpg": [1024, 576],
-  "A2_Draco_rib_patagium.gif": [680, 235],
   "D05_viper_fang_erection.gif": [760, 359],
   "D06_snake_pterygoid_walk.gif": [760, 240],
   "D07_chameleon_tongue.gif": [760, 209],
@@ -28,5 +20,23 @@ window.DIMS = {
   "Molnar2017_Fig1_chameleon-forelimb-skeleton.jpg": [1357, 931],
   "Molnar2017_Fig3_chameleon-hindlimb-skeleton.jpg": [1357, 911],
   "Navarro2023_Fig1_Liolaemus-brachial-plexus.jpg": [1090, 800],
-  "York1998_Fig1_Bitis-supranasal-sac.jpg": [1284, 993]
+  "York1998_Fig1_Bitis-supranasal-sac.jpg": [1284, 993],
+  "ph_Amphisbaena.jpg": [1800, 1350],
+  "ph_Anolis.jpg": [1800, 1350],
+  "ph_Aspidoscelis.jpg": [1800, 1350],
+  "ph_Bipes.jpg": [1800, 1350],
+  "ph_Bitis.jpg": [1800, 1199],
+  "ph_Chamaeleo.jpg": [1800, 1199],
+  "ph_Crotalus.jpg": [1800, 1218],
+  "ph_Dibamus.jpg": [1800, 1585],
+  "ph_Draco.jpg": [1800, 1695],
+  "ph_Gekko-toes.jpg": [1350, 1800],
+  "ph_Gekko.jpg": [1800, 1199],
+  "ph_Indotyphlops.jpg": [1800, 1010],
+  "ph_Lialis.jpg": [1800, 1199],
+  "ph_Podarcis.jpg": [1800, 1355],
+  "ph_Salvator.jpg": [1800, 1199],
+  "ph_Tiliqua.jpg": [1800, 1350],
+  "ph_Uromastyx.jpg": [1800, 1200],
+  "ph_Varanus-komodoensis.jpg": [1800, 1199]
 };

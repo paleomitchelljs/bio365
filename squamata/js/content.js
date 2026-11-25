@@ -2,7 +2,7 @@
  * On screen: clade names, anatomy, a few numbers. Everything else is in notes (S). */
 (function () {
   'use strict';
-  const K = window.Kit, I = K.img;
+  const K = window.Kit, I = K.img, M = K.sf;
   const SF = (name, by, lic) => `"${name}" by ${by} · Sketchfab · ${lic || 'CC BY 4.0'}`;
   const SHORTEN = '*red* = shortening';
 
@@ -60,7 +60,7 @@ Squamata
   const segments = [
     K.cover('Squamata', {
       sub: 'lizards · amphisbaenians · snakes',
-      pic: 'img/3D_MS_Gekko-smithii-CAS9595_view1_side.jpg', cap: '_Gekko smithii_ · CAS Herp 9595 · MorphoSource 000023462',
+      pic: 'img/ph_Gekko.jpg', cap: '_Gekko gecko_, the tokay · Xavier Rufray · iNaturalist · CC BY-NC',
       notes: [
         'Picks up from _Sphenodon_, the lepidosaur outgroup: everything _Sphenodon_ lacks and squamates have is a squamate novelty (hemipenes, lost lower bar, streptostyly).',
         'Thesis: squamates are the course\'s best case of evolutionary lability. Limbs lost dozens of times, viviparity ~115 times, parthenogenesis repeatedly. The skull is "a kit of loosely hinged parts".'
@@ -70,7 +70,7 @@ Squamata
     K.plate('hook', 'Pod Mrčaru', {
       min: 2,
       head: { name: 'Pod Mrčaru', facts: '_Podarcis siculus_' },
-      panels: [],
+      panels: [I('ph_Podarcis.jpg', '_Podarcis siculus_ · Jakob Fahr · iNaturalist · CC BY-NC', { label: 'Italian wall lizard' })],
       foot: [{ text: '1971: 5 pairs' }, { text: '~36 years', at: 1 }, { text: 'bigger heads · harder bites', at: 2 }, { text: 'cecal valves', at: 3 }],
       notes: [
         '2018 exam 4 asked about them. Five pairs put on an Adriatic islet in 1971.',
@@ -88,7 +88,7 @@ Squamata
     K.plate('synapo', 'What a squamate is', {
       min: 3,
       head: { name: 'Squamata', facts: 'synapomorphies' },
-      panels: [I('3D_Varanus-beccarii-skull_sketchfab-preview.jpg', SF('Skull of Varanus beccarii (Black tree monitor)', 'GigaScience'))],
+      panels: [M('0edb130cfd234b0f9ac60a7380341e70', SF('Skull of Varanus beccarii (Black tree monitor)', 'GigaScience'), { label: 'monitor skull: no lower bar', aspect: 16 / 10 })],
       foot: [
         { text: 'hemipenes' }, { text: 'no lower temporal bar', at: 1 }, { text: 'streptostyly', at: 1 },
         { text: '1 occipital condyle', at: 2 }, { text: 'skin shed whole', at: 3 }, { text: 'vomeronasal organ', at: 3 }
@@ -124,7 +124,7 @@ Squamata
     K.plate('dibamid', 'Dibamidae', {
       min: 1, mini: sq('Dibamidae'),
       head: { name: 'Dibamidae', facts: 'blind lizards' },
-      panels: [],
+      panels: [I('ph_Dibamus.jpg', '_Dibamus novaeguineae_ · Colin Trainor · iNaturalist · CC BY-NC')],
       foot: [{ text: 'limbless burrowers' }, { text: 'hind-limb flaps (males)' }, { text: 'fused skull' }],
       notes: ['Sister to all other squamates.']
     }),
@@ -133,8 +133,10 @@ Squamata
       min: 3, mini: sq('Gekkota'),
       head: { name: 'Gekkota', facts: 'geckos · pygopodids' },
       panels: [
-        I('3D_MS_Gekko-smithii-CAS9595_view1_side.jpg', '_Gekko smithii_ · CAS Herp 9595 · MorphoSource 000023462'),
-        I('Gecko_appendicular_Fig1.jpg', '_Gekko gecko_ vs. _Eublepharis_ limb muscles', { at: 3 })
+        I('ph_Gekko-toes.jpg', '_Gekko gecko_ · Sumedha Sharma · iNaturalist · CC BY-NC', { label: 'toe pads' }),
+        M('b5d1c3597c904b4aac43356118aa5a7a', '_Gekko gecko_ UF 14993 · Blackburn Lab · Sketchfab', { label: 'tokay skeleton', at: 2, aspect: 16 / 10 }),
+        I('Gecko_appendicular_Fig1.jpg', '_Gekko gecko_ vs. _Eublepharis_ limb muscles', { at: 3 }),
+        I('ph_Lialis.jpg', '_Lialis burtonis_ · dhfischer · iNaturalist · CC BY', { label: 'pygopodid: _Lialis_', at: 4 })
       ],
       foot: [{ text: 'setae' }, { text: 'spectacle', at: 1 }, { text: 'fracture planes', at: 2 }, { text: 'pygopodids', at: 4 }],
       notes: [
@@ -150,7 +152,7 @@ Squamata
     K.plate('scincoid', 'Scincoidea', {
       min: 2, mini: sq('Scincoidea'),
       head: { name: 'Scincoidea', facts: 'skinks · cordylids' },
-      panels: [],
+      panels: [I('ph_Tiliqua.jpg', '_Tiliqua scincoides_ · herphendrie · iNaturalist · CC BY-NC', { label: 'blue-tongued skink' })],
       foot: [{ text: 'osteoderms' }, { text: 'limb reduction ~25+ times', at: 1 }, { text: '_Mabuya_ placenta', at: 2 }],
       notes: [
         '⚠ Tone down the 440 "100+ times within skinks". Published estimates: ~25 or more independent reductions within Scincidae, _Lerista_ alone about 10 (Skinner et al. 2008; check).',
@@ -161,20 +163,28 @@ Squamata
     K.plate('amphisbaenia', 'Amphisbaenia', {
       min: 2, mini: sq('Lacertoidea'),
       head: { name: 'Amphisbaenia', facts: 'inside Lacertoidea' },
-      panels: [],
+      panels: [
+        I('ph_Amphisbaena.jpg', '_Leposternon octostegum_ · Rafael M R Serra · iNaturalist · CC BY', { label: '_Leposternon_' }),
+        M('b7df924264a740c2a02ab264169906ee', '"Rhineura Skull Anatomy" · Blackburn Lab · Sketchfab', { label: '_Rhineura_ skull, bones colored', aspect: 16 / 10 }),
+        I('ph_Bipes.jpg', '_Bipes biporus_ · Bill Levine · iNaturalist · CC BY', { label: '_Bipes_', at: 1 })
+      ],
       foot: [{ text: '1 median premaxillary tooth' }, { text: '_Bipes_: forelimbs only', at: 1 }, { text: '*right* lung reduced', at: 2 }, { text: 'annuli', at: 3 }],
       notes: [
         'Rigid, shovel- or keel-shaped skulls.',
         'Amphisbaenians reduce the *right* lung; snakes the *left*. Limblessness reached two ways.',
         'Scales in rings; the skin moves like a loose sleeve during concertina burrowing.',
-        'The MorphoSource "_Amphisbaena vermicularis_" mesh looks teiid- or lacertid-like, so it is not used here. Verify the ID before using it.'
+        'The 3D skull is _Rhineura floridana_, the Florida worm lizard, the only amphisbaenian in the US: drag it to see the rigid, spade-like snout.'
       ]
     }),
 
     K.plate('lacertoid', 'Lacertoidea', {
       min: 2, mini: sq('Lacertoidea'),
       head: { name: 'Lacertoidea', facts: 'tegus · whiptails · lacertids' },
-      panels: [],
+      panels: [
+        I('ph_Salvator.jpg', '_Salvator merianae_ · Donald Davesne · iNaturalist · CC BY', { label: 'tegu' }),
+        M('bf934236fe9e4670bae99c80b35f0eda', SF('Skull of Salvator rufescens (red tegu)', 'GigaScience'), { label: 'tegu skull', aspect: 16 / 10 }),
+        I('ph_Aspidoscelis.jpg', '_Aspidoscelis tigris_ · Jack Wickel · iNaturalist · CC BY-NC', { label: 'whiptail', at: 1 })
+      ],
       foot: [{ text: 'tegu: seasonal endothermy' }, { text: 'whiptails: parthenogenesis', at: 1 }, { text: '_Dracaena_: crushing teeth', at: 2 }],
       notes: [
         'Tegus (_Salvator_) warm themselves to ~10 °C above ambient at night in the breeding season (Tattersall et al. 2016, _Sci Adv_).',
@@ -186,12 +196,13 @@ Squamata
     K.plate('iguania', 'Iguania', {
       min: 3, mini: sq('Iguania'),
       head: { name: 'Iguania', facts: 'visual hunters' },
+      rows: 1,
       panels: [
-        I('A2_Draco_rib_patagium.gif', '_Draco maculatus_ · UF Herp 63893 · oVert · MorphoSource 000036116', { label: '_Draco_: rib patagium' }),
-        I('3D_Chamaeleo-calyptratus-skull_sketchfab-preview.jpg', SF('Skull of Chamaeleo calyptratus (chameleon)', 'GigaScience'), { label: 'chameleon', at: 2 })
+        I('ph_Draco.jpg', '_Draco guentheri_ · kevinpearce · iNaturalist · CC BY-NC', { label: '_Draco_: rib patagium' }),
+        I('ph_Anolis.jpg', '_Anolis carolinensis_ · Elaine White · iNaturalist · CC BY-NC', { label: '_Anolis_: dewlap', at: 1 }),
+        M('9a711c7e59d14f08a7ac60bea4894084', '"Veiled Chameleon Skull Anatomy" · Blackburn Lab · Sketchfab', { label: 'chameleon skull', at: 2, aspect: 16 / 10 })
       ],
       foot: [{ text: 'hyoid frill', at: 1 }, { text: '_Anolis_ ecomorphs', at: 1 }, { text: 'acrodont (agamids)', at: 3 }],
-      legend: SHORTEN,
       notes: [
         'Bright colors and display. Frilled lizard\'s frill is a hyoid-supported skin fold.',
         'Horned lizards (_Phrynosoma_) and thorny devils (_Moloch_): convergent desert ant-eaters.',
@@ -203,7 +214,10 @@ Squamata
     K.plate('anguimorph', 'Anguimorpha', {
       min: 2.5, mini: sq('Anguimorpha'),
       head: { name: 'Anguimorpha', facts: 'chemical hunters' },
-      panels: [I('3D_Varanus-komodoensis-UF28219_sketchfab-preview.jpg', SF('Varanus Komodoensis UF28219', 'Blackburn Lab'))],
+      panels: [
+        I('ph_Varanus-komodoensis.jpg', '_Varanus komodoensis_ · Luke Foster · iNaturalist · CC BY-NC', { label: 'Komodo dragon' }),
+        M('c6602993155a45858c310ef57b2bda80', SF('Varanus Komodoensis UF28219', 'Blackburn Lab'), { label: 'skull', aspect: 16 / 10 })
+      ],
       foot: [{ text: 'forked tongue' }, { text: 'vomeronasal organ' }, { text: 'stereo smell', at: 1 }],
       notes: [
         'Long forked tongues deliver chemicals to the VNO. Each tip samples one side, which tells the lizard trail direction (Schwenk 1994).',
@@ -246,7 +260,10 @@ Squamata
     K.plate('uromastyx', '_Uromastyx_', {
       tier: 2, min: 2,
       head: { name: '_Uromastyx_', facts: 'Herrel & De Vree 2009' },
-      panels: [I('HerrelDeVree2009_Fig1_Uromastyx-jaw-muscles.jpg', 'Herrel & De Vree 2009')],
+      panels: [
+        I('ph_Uromastyx.jpg', '_Uromastyx dispar_ · Rodrigo Bustos Gil · iNaturalist · CC BY-NC', { label: 'spiny-tailed lizard' }),
+        I('HerrelDeVree2009_Fig1_Uromastyx-jaw-muscles.jpg', 'Herrel & De Vree 2009')
+      ],
       foot: [{ text: 'pterygoideus' }, { text: '~59 N', at: 1 }, { text: 'hyoid → depressor → adductors', at: 2 }],
       side: true,
       notes: ['Hypertrophied pterygoideus; bite ~59 N, typical for its size.', 'EMG of intraoral transport: slow open I/II → fast open → close. Hyoid and tongue protractors fire first, then the depressor mandibulae, then the adductors.']
@@ -257,6 +274,7 @@ Squamata
       min: 4,
       head: { name: 'Projectile tongue', facts: 'Herrel et al. 2001' },
       panels: [
+        I('ph_Chamaeleo.jpg', '_Chamaeleo calyptratus_ · Bobby Bok · iNaturalist · CC BY-NC', { label: 'veiled chameleon' }),
         I('D07_chameleon_tongue.gif', 'Schematic after Herrel et al. 2001'),
         I('Herrel2001_Fig1_chameleon-hyolingual.jpg', 'Herrel et al. 2001', { at: 1 })
       ],
@@ -273,7 +291,10 @@ Squamata
     K.plate('chameleon2', 'Chameleon tongue muscles', {
       tier: 2, min: 1.5,
       head: { name: 'Tongue muscles', facts: 'Herrel et al. 2001' },
-      panels: [I('Herrel2001_Fig2_chameleon-tongue-muscles.jpg', 'Herrel et al. 2001')],
+      panels: [
+        I('Herrel2001_Fig2_chameleon-tongue-muscles.jpg', 'Herrel et al. 2001'),
+        M('b91eed53c39a4b348049d87f5665ee18', '"Tongue muscles of adult female veiled chameleon" · The Leavey Lab · Sketchfab', { label: 'the same muscles in 3D', aspect: 1 })
+      ],
       side: true, foot: [{ text: 'accelerator · hyoglossus' }],
       notes: []
     }),
@@ -360,7 +381,7 @@ Squamata
       head: { name: 'Swallowing by ratchet' },
       panels: [
         I('D06_snake_pterygoid_walk.gif', 'Schematic'),
-        I('3D_Python-regius-skull_sketchfab-preview.jpg', SF('Skull of Python regius (ball python)', 'GigaScience'), { at: 1 })
+        M('10e2cf546ee143a0b640efe07ef53690', SF('Skull of Python regius (ball python)', 'GigaScience'), { label: 'ball python skull', at: 1, aspect: 16 / 10 })
       ],
       foot: [{ text: 'no mandibular symphysis', at: 1 }, { text: 'streptostylic quadrate', at: 1 }, { text: 'pterygoid walk', at: 2 }],
       notes: [
@@ -373,7 +394,7 @@ Squamata
     K.plate('trunk', 'Snake trunk', {
       min: 2.5, mini: sn('Serpentes'),
       head: { name: 'Trunk' },
-      panels: [I('3D_MS_Naja-nigricollis-UMMZ203814_view1_side.jpg', '_Naja nigricollis_ · UMMZ Herps 203814 · MorphoSource 000039470')],
+      panels: [M('6342f92f01da4848ab3a5e227a74942a', SF('Striped Snake CT scan', 'ffish.asia / floraZia.com', 'CC BY-NC-SA 4.0'), { label: '_Elaphe quadrivirgata_', aspect: 16 / 9 })],
       foot: [{ text: '200–400+ vertebrae' }, { text: 'zygosphene–zygantrum', at: 1 }, { text: '_Hox_: all thorax', at: 2 }, { text: '*left* lung reduced', at: 3 }, { text: 'cloacal spurs', at: 4 }],
       notes: [
         'Extra pair of joints (zygosphene–zygantrum) stops twisting.',
@@ -399,7 +420,10 @@ Squamata
     K.plate('bitis', 'Supranasal sac', {
       min: 2,
       head: { name: '_Bitis_ supranasal sac', facts: 'York, Silver & Smith 1998' },
-      panels: [I('York1998_Fig1_Bitis-supranasal-sac.jpg', 'York, Silver & Smith 1998')],
+      panels: [
+        I('ph_Bitis.jpg', '_Bitis gabonica_ · Heinrich Human · iNaturalist · CC BY-NC', { label: 'Gaboon viper' }),
+        I('York1998_Fig1_Bitis-supranasal-sac.jpg', 'York, Silver & Smith 1998')
+      ],
       foot: [{ text: 'V₁' }, { text: 'TRPA1', at: 1 }],
       side: true,
       notes: [
@@ -413,8 +437,9 @@ Squamata
       min: 3, mini: sn('Viperidae'),
       head: { name: 'Fangs' },
       panels: [
+        I('ph_Crotalus.jpg', '_Crotalus atrox_ · el_gallo · iNaturalist · CC BY-NC', { label: 'western diamondback' }),
         I('D05_viper_fang_erection.gif', 'Schematic'),
-        I('3D_Crotalus-rattlesnake-skull_sketchfab-preview.jpg', SF('Rattlesnake (Crotalus sp.) skull', 'LJMUZoology'), { at: 1 })
+        M('44184573b60c483fbae54b6e4db56d10', '"Mexican Small Headed Rattlesnake Skull Anatomy" · Blackburn Lab · Sketchfab', { label: 'rattlesnake skull, bones colored', at: 1, aspect: 16 / 10 })
       ],
       foot: [{ text: 'rotating maxilla' }, { text: 'solenoglyphous', at: 1 }],
       notes: ['Hinged front fangs on a rotating maxilla. Venom glands are modified oral glands; in front-fanged snakes jaw muscles compress them (tie to Johnston\'s LAO).']
@@ -435,7 +460,7 @@ Squamata
     K.plate('scoleco', 'Blind snakes', {
       tier: 2, min: 1, mini: sn('Scolecophidia'),
       head: { name: 'Scolecophidia', facts: 'blind snakes' },
-      panels: [],
+      panels: [I('ph_Indotyphlops.jpg', '_Indotyphlops braminus_ · Mudassar Basri · iNaturalist · CC BY-NC', { label: 'Brahminy blind snake' })],
       foot: [{ text: 'UV fluorescence' }, { text: 'barn owl nests', at: 1 }],
       notes: ['Barn owls carry live blind snakes to their nests, and the snakes may eat nest parasites (Gehlbach & Baldridge 1987: one study, flag it).']
     }),
